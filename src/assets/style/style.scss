@@ -1,0 +1,205 @@
+// COLORS
+
+$orange: #f08f50;
+$red: #d45b6e;
+
+// summary
+
+// 01. GENERAL
+// 02. NAVIGATION
+// 03. FOOTER
+// 04. LANDING PAGE
+
+// 01. GENERAL
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: 1.3rem;
+	color: #333;
+}
+html {
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+body {
+	height: 100%;
+	position: relative;
+	min-height: 100vh;
+}
+
+.wrapper {
+	position: relative;
+	line-height: 1.5;
+	min-height: calc(100vh - 4rem);
+	display: flex;
+}
+
+// general page layout
+
+.container {
+	margin: 5% 15% 3% 15%;
+	h1 {
+		margin: 6% auto 3% auto;
+		color: $orange;
+		text-align: center;
+		font-size: 2.5rem;
+	}
+	h2 {
+		margin: 6% 0 2% 0;
+		color: orange;
+		font-size: 2rem;
+		svg {
+			path {
+				color: orange;
+			}
+		}
+	}
+	h3 {
+		color: $red;
+		font-size: 1.5rem;
+		svg {
+			path {
+				color: $red;
+			}
+		}
+	}
+	p,
+	a,
+	ul,
+	li {
+		font-size: 16px;
+		text-align: justify;
+	}
+}
+
+// 02. NAVIGATION
+
+.nonAuthNav {
+	background: rgb(240, 143, 80);
+	background: -moz-linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: -webkit-linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f08f50", endColorstr="#d45b6e", GradientType=1);
+	display: flex;
+	.logo {
+		flex-grow: 1;
+	}
+	li {
+		margin-right: 2%;
+		list-style: none;
+		align-self: center;
+		a,
+		.divider,
+		.dropdown {
+			justify-content: center;
+			align-items: center;
+			color: white;
+			text-decoration: none;
+		}
+	}
+}
+
+// 03. FOOTER
+
+.footer {
+	background: rgb(240, 143, 80);
+	background: -moz-linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: -webkit-linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: linear-gradient(39deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f08f50", endColorstr="#d45b6e", GradientType=1);
+	position: absolute;
+	font-size: small;
+	color: #fff;
+	background-color: #262626;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 5rem;
+	padding: 2%;
+}
+.flexFooter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	p {
+		color: white;
+		font-size: 15px;
+	}
+}
+.footerLink {
+	width: 100%;
+	text-align: center;
+	margin: 0 2%;
+	a {
+		text-align: center;
+		margin: 0 1%;
+		color: white;
+		text-decoration: none;
+		font-style: italic;
+	}
+}
+
+// LANDING PAGE
+
+.landingPresentation {
+	display: flex;
+	flex-direction: row;
+	margin: 3% auto;
+	justify-content: center;
+	align-items: center;
+
+	.ui.card {
+		margin: 0 2% 0 2%;
+		padding: 0;
+		height: 300px;
+		.content {
+			svg {
+				font-size: 2rem;
+				display: block;
+				margin: 1% auto;
+				path {
+					color: orange;
+				}
+			}
+			h1 {
+				color: $orange;
+				text-align: center;
+			}
+		}
+		.extra {
+			text-align: right;
+		}
+	}
+}
+.historyPic {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 10px;
+	margin-right: 2%;
+}
+.flex_history {
+	display: flex;
+	margin-bottom: 4%;
+}
+.historyUl {
+	margin-left: 4%;
+}
+
+//MISSIONS PAGE
+
+.missionPic {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 10px;
+	margin-left: 4%;
+}
+p {
+	align-self: center;
+	justify-self: center;
+}
