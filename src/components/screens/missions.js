@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaCodeBranch } from 'react-icons/fa';
 import mission from '../../assets/img/mission.jpg';
+import MissionEtAide from '../../assets/img/MissionEtAide.jpg';
 
 class missions extends Component {
 	constructor(props) {
@@ -75,12 +76,15 @@ class missions extends Component {
 				<h3>Participer financièrement</h3>
 				<p>Toute aide financière sera précieuse pour la pérennité de PSH Alumni</p>
 				<div className="line" />
-				<p className="quoted">
-					PSH Alumni est un réseau solide et en devenir d'échanges personnels et professionnels fructueux, un
-					réseau de jeunes adultes responsables, un réseau de femmes et d'hommes aux carrières exemplaires, un
-					réseau qui rapproche plusieurs générations, un réseau qui maintien le lien professeur-élève, un
-					réseau dynalique à l'image de PSH
-				</p>
+				<section className="bottom">
+					<img className="historyPic" src={MissionEtAide} />
+					<p className="quoted">
+						PSH Alumni est un réseau solide et en devenir d'échanges personnels et professionnels fructueux,
+						un réseau de jeunes adultes responsables, un réseau de femmes et d'hommes aux carrières
+						exemplaires, un réseau qui rapproche plusieurs générations, un réseau qui maintien le lien
+						professeur-élève, un réseau dynalique à l'image de PSH
+					</p>
+				</section>
 			</div>
 		);
 	}

@@ -203,3 +203,17 @@ p {
 	align-self: center;
 	justify-self: center;
 }
+.line {
+	width: 400px;
+	height: 3px;
+	display: block;
+	margin: 5% auto;
+	background-color: $orange;
+}
+
+.bottom {
+	display: flex;
+	p {
+		font-size: 20px;
+	}
+}
