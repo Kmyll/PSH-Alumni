@@ -8,7 +8,11 @@ class cvTheque extends Component {
 	}
 
 	render() {
-		return <div />;
+		return (
+			<div>
+				<h1>CT Thèque</h1>
+			</div>
+		);
 	}
 }
 

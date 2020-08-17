@@ -2,20 +2,17 @@ import React from 'react';
 import { compose } from 'recompose';
 
 import { withAuthorization, withEmailVerification } from '../Session';
-import Messages from '../Messages';
+import Honeycomb from './honeycomb';
 
 const HomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
+	<div className="container">
+		<h1>Bienvenue sur votre page personnalisée !</h1>
+		<p className="authHomepage">Merci de cliquer sur une rubrique ci-dessous :</p>
 
-    <Messages />
-  </div>
+		<Honeycomb />
+	</div>
 );
 
-const condition = authUser => !!authUser;
+const condition = (authUser) => !!authUser;
 
-export default compose(
-  withEmailVerification,
-  withAuthorization(condition),
-)(HomePage);
+export default compose(withEmailVerification, withAuthorization(condition))(HomePage);

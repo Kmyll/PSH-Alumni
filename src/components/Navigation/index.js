@@ -49,7 +49,7 @@ const NavigationAuth = ({ authUser }) => (
 			</li>
 		)}
 		<li>
-			<SignOutButton />
+			<SignOutButton className="signoutBtn" />
 		</li>
 	</ul>
 );
