@@ -9,6 +9,7 @@ $red: #d45b6e;
 // 02. NAVIGATION
 // 03. FOOTER
 // 04. LANDING PAGE
+// 05. SIGN IN PAGE
 
 // 01. GENERAL
 
@@ -147,6 +148,10 @@ body {
 
 // LANDING PAGE
 
+.headerPic {
+	width: 100%;
+}
+
 .landingPresentation {
 	display: flex;
 	flex-direction: row;
@@ -215,5 +220,75 @@ p {
 	display: flex;
 	p {
 		font-size: 20px;
+	}
+}
+
+// SIGN IN PAGE
+
+.signIn {
+	background: rgb(240, 143, 80);
+	background: -moz-linear-gradient(90deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	background: linear-gradient(90deg, rgba(240, 143, 80, 1) 0%, rgba(212, 91, 110, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f08f50", endColorstr="#d45b6e", GradientType=1);
+
+	width: 100%;
+	section {
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+		-moz-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+		box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+		background-color: white;
+		width: 50%;
+		height: 70%;
+		display: block;
+		margin: 6% auto;
+		padding: 4%;
+		border-radius: 10px;
+		h1 {
+			text-align: center;
+			color: $orange;
+			font-size: 2.5rem;
+		}
+	}
+}
+
+.signInForm {
+	display: flex;
+	flex-direction: column;
+	margin: 4% 15% 0 15%;
+	p {
+		text-align: center;
+		font-style: italic;
+		margin: 0 auto 7% auto;
+	}
+	div {
+		margin-bottom: 2%;
+	}
+	button {
+		width: 50%;
+		display: block;
+		margin: 3% auto;
+		padding: 3% 2%;
+		border-radius: 10px;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+.forgotPasswordLink {
+	text-align: center;
+}
+
+// PASSWORD FORGOT
+
+.pw-forgot {
+	h1 {
+		margin-top: 5% !important;
+	}
+	form {
+		margin-top: 8% !important;
+	}
+	button {
+		margin-top: 8% !important;
 	}
 }

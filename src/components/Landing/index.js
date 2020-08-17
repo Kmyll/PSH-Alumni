@@ -6,7 +6,7 @@ import { BsFillAwardFill } from 'react-icons/bs';
 
 const Landing = () => (
 	<div>
-		<img src={header} />
+		<img className="headerPic" src={header} />
 		<section className="landingPresentation">
 			<Card>
 				<Card.Content>
