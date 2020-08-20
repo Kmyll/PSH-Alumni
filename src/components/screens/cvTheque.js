@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-
+import { withFirebase as firebase } from '../Firebase';
 import FileUploader from 'react-firebase-file-uploader';
 
 class cvTheque extends Component {
@@ -35,7 +35,7 @@ class cvTheque extends Component {
 			image    : filename,
 			progress : 100
 		});
-		firebase.storage().ref('cv').child(filename).getDownloadURL().then((url) =>
+		firebase.storage().ref('resumeFile').child(filename).getDownloadURL().then((url) =>
 			this.setState({
 				imageURL : url
 			})
@@ -51,7 +51,7 @@ class cvTheque extends Component {
 		db.settings({
 			timestampsInSnapshots : true
 		});
-		const placeRef = db.collection('cvtheque').add({
+		const placeRef = db.collection('cv').add({
 			created   : firebase.firestore.Timestamp.now(),
 			lastName  : this.state.lastName,
 			firstName : this.state.firstName,
