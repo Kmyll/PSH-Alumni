@@ -10,6 +10,7 @@ $red: #d45b6e;
 // 03. FOOTER
 // 04. LANDING PAGE
 // 05. SIGN IN PAGE
+// 06. CVTHEQUE FORM
 
 // 01. GENERAL
 
@@ -42,6 +43,7 @@ body {
 
 .container {
 	margin: 5% 15% 3% 15%;
+	width: 100%;
 	h1 {
 		margin: 6% auto 3% auto;
 		color: $orange;
@@ -100,15 +102,14 @@ body {
 			color: white;
 			text-decoration: none;
 		}
-		button {
-			background-color: transparent;
-			border: none;
-			color: white;
-			font-size: 13px;
-			cursor: pointer;
-			&:hover {
-				outline: none;
-			}
+	}
+}
+.signOutPara {
+	p {
+		color: white !important;
+		cursor: pointer;
+		&:hover {
+			outline: none;
 		}
 	}
 }
@@ -334,6 +335,28 @@ p {
 	margin: 4% auto 4% auto;
 }
 
+.signoutBtn {
+	p {
+		line-height: 2.5rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		hyphens: auto;
+		word-break: break-word;
+		text-transform: uppercase !important;
+		color: #fff !important;
+		font-weight: 700;
+		font-size: 1.75em !important;
+		transition: opacity 350ms;
+
+		> small {
+			font-weight: 300;
+			margin-top: 0.25em;
+		}
+	}
+}
+
 // HONEYCOMB
 
 $hexagon-width: 250px;
@@ -379,10 +402,10 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
 			justify-content: center;
 			hyphens: auto;
 			word-break: break-word;
-			text-transform: uppercase;
-			color: #fff;
+			text-transform: uppercase !important;
+			color: #fff !important;
 			font-weight: 700;
-			font-size: 1.75em;
+			font-size: 1.75em !important;
 			transition: opacity 350ms;
 
 			> small {
@@ -495,4 +518,23 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
 	.honeycomb__placeholder:nth-child(7n + 11) {
 		display: block;
 	}
+}
+
+// CV THEQUE FORM
+
+.cvthequeForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	div {
+		width: 100%;
+		max-width: 600px;
+		margin-bottom: 2%;
+	}
+}
+
+.cvthequePara {
+	text-align: center !important;
+	margin-bottom: 3%;
 }

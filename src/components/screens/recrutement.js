@@ -8,7 +8,11 @@ class recrutement extends Component {
 	}
 
 	render() {
-		return <div />;
+		return (
+			<div className="container">
+				<h1>Recrutement</h1>
+			</div>
+		);
 	}
 }
 

@@ -8,7 +8,11 @@ class offres extends Component {
 	}
 
 	render() {
-		return <div />;
+		return (
+			<div className="container">
+				<h1>COnsulter nos offres</h1>
+			</div>
+		);
 	}
 }
 

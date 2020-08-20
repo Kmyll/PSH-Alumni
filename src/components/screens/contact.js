@@ -8,7 +8,11 @@ class contact extends Component {
 	}
 
 	render() {
-		return <div />;
+		return (
+			<div className="container">
+				<h1>Contact</h1>
+			</div>
+		);
 	}
 }
 

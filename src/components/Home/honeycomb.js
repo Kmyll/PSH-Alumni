@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SignOutButton from '../SignOut';
 
 class Honeycomb extends Component {
 	constructor(props) {
@@ -23,7 +24,7 @@ class Honeycomb extends Component {
 					</li>
 
 					<li class="honeycomb-cell">
-						<Link to="/evenements">
+						<Link to="/events">
 							<img
 								class="honeycomb-cell__image"
 								src="https://images.unsplash.com/photo-1561912774-79769a0a0a7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
@@ -49,16 +50,16 @@ class Honeycomb extends Component {
 							<div class="honeycomb-cell__title">Consulter les offres</div>
 						</Link>
 					</li>
-					<li class="honeycomb-cell">
+					<li className="honeycomb-cell">
 						<Link to="/cvtheque">
 							<img
-								class="honeycomb-cell__image"
+								className="honeycomb-cell__image"
 								src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
 							/>
-							<div class="honeycomb-cell__title">CVThèque</div>
+							<div className="honeycomb-cell__title">CVThèque</div>
 						</Link>
 					</li>
-					<li class="honeycomb-cell">
+					<li className="honeycomb-cell">
 						<Link to="/contact">
 							<img
 								class="honeycomb-cell__image"
@@ -67,14 +68,13 @@ class Honeycomb extends Component {
 							<div class="honeycomb-cell__title">Contact</div>
 						</Link>
 					</li>
-					<li class="honeycomb-cell">
-						<Link to="/signout">
-							<img
-								class="honeycomb-cell__image"
-								src="https://images.unsplash.com/photo-1545805973-a16124ed9629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-							/>
-							<div class="honeycomb-cell__title">Déconnexion</div>
-						</Link>
+					<li className="honeycomb-cell signoutBtn">
+						<img
+							class="honeycomb-cell__image"
+							src="https://images.unsplash.com/photo-1545805973-a16124ed9629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+						/>
+
+						<SignOutButton />
 					</li>
 				</ul>
 			</div>

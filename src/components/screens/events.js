@@ -8,7 +8,11 @@ class events extends Component {
 	}
 
 	render() {
-		return <div />;
+		return (
+			<div className="container">
+				<h1>Participer aux evénements</h1>
+			</div>
+		);
 	}
 }
 

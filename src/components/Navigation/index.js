@@ -27,6 +27,12 @@ const NavigationAuth = ({ authUser }) => (
 			</Link>
 		</li>
 		<li>
+			<Link to={ROUTES.HOME}>Home</Link>
+		</li>
+		<li>
+			<Link to={ROUTES.ACCOUNT}>Account</Link>
+		</li>
+		<li>
 			<Dropdown text="Agir">
 				<Dropdown.Menu>
 					<Dropdown.Item text="Contacter l'équipe Alumni" as={Link} to="/contact" />
@@ -37,19 +43,14 @@ const NavigationAuth = ({ authUser }) => (
 				</Dropdown.Menu>
 			</Dropdown>
 		</li>
-		<li>
-			<Link to={ROUTES.HOME}>Home</Link>
-		</li>
-		<li>
-			<Link to={ROUTES.ACCOUNT}>Account</Link>
-		</li>
+
 		{!!authUser.roles[ROLES.ADMIN] && (
 			<li>
 				<Link to={ROUTES.ADMIN}>Admin</Link>
 			</li>
 		)}
-		<li>
-			<SignOutButton className="signoutBtn" />
+		<li className="signOutPara">
+			<SignOutButton className="signOutPara" />
 		</li>
 	</ul>
 );
