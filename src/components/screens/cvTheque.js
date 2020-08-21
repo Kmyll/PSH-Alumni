@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { withFirebase as firebase } from '../Firebase';
+import firebase from '../Firestore';
 import FileUploader from 'react-firebase-file-uploader';
+import 'firebase/storage';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { StyledDropZone } from 'react-drop-zone';
+import 'react-drop-zone/dist/styles.css';
+
+toast.configure();
+
+const notify = () => {
+	toast.success('CV enregistré !', {
+		position : toast.POSITION_TOP_RIGHT
+	});
+};
 
 class cvTheque extends Component {
 	constructor(props) {
@@ -35,7 +48,7 @@ class cvTheque extends Component {
 			image    : filename,
 			progress : 100
 		});
-		firebase.storage().ref('resumeFile').child(filename).getDownloadURL().then((url) =>
+		firebase.storage().ref('cv').child(filename).getDownloadURL().then((url) =>
 			this.setState({
 				imageURL : url
 			})
@@ -45,8 +58,8 @@ class cvTheque extends Component {
 	//Send texte
 
 	onSubmit = (event, authUser, place) => {
-		event.preventDefault();
-		event.target.reset();
+		event.preventDefault(); // do not refresh the page
+		event.target.reset(); // reset form fields
 		const db = firebase.firestore();
 		db.settings({
 			timestampsInSnapshots : true
@@ -62,7 +75,9 @@ class cvTheque extends Component {
 		this.setState({
 			lastName  : '',
 			firstName : '',
-			job       : ''
+			job       : '',
+			image     : '',
+			imageURL  : ''
 		});
 	};
 
@@ -77,6 +92,7 @@ class cvTheque extends Component {
 			lastName === firstName ||
 			firstName === job ||
 			lastName === job;
+
 		return (
 			<div className="container">
 				<h1>CVThèque</h1>
@@ -86,25 +102,49 @@ class cvTheque extends Component {
 					protéger votre addresse et votre numéro de téléphone si vous le souhaitez.
 				</p>
 				<form className="cvthequeForm" onSubmit={this.onSubmit}>
-					<TextField id="outlined-basic" label="Nom de famille" variant="outlined" onChange={this.onChange} />
-					<TextField id="outlined-basic" label="Prénom" variant="outlined" onChange={this.onChange} />
+					<div className="block">
+						<label>Ajoutez votre CV </label>
+						<FileUploader
+							className="uploadCV"
+							accept="application/pdf,application/vnd.ms-word"
+							name="image"
+							storageRef={firebase.storage().ref('cv')}
+							onUploadStart={this.onUploadStart}
+							onUploadSuccess={this.handleUploadSuccess}
+						/>
+					</div>
+
 					<TextField
+						id="outlined-basic"
+						name="lastName"
+						label="Nom de famille"
+						variant="outlined"
+						onChange={this.onChange}
+					/>
+
+					<TextField
+						id="outlined-basic"
+						name="firstName"
+						label="Prénom"
+						variant="outlined"
+						onChange={this.onChange}
+					/>
+
+					<TextField
+						name="job"
 						id="outlined-basic"
 						label="Poste recherché"
 						variant="outlined"
 						onChange={this.onChange}
 					/>
-					<div className="block">
-						<label>Add a picture</label>
 
-						<FileUploader
-							accept="image/*"
-							name="image"
-							storageRef={firebase.storage().ref('test')}
-							onUploadStart={this.onUploadStart}
-							onUploadSuccess={this.handleUploadSuccess}
-						/>
+					{/* <div className="block image">{this.state.image && <img src={this.state.imageURL} />}</div> */}
+					<div className="validationBtn">
+						<button disabled={isInvalid} type="submit" onClick={notify}>
+							Sauvegarder
+						</button>
 					</div>
+					{error && <p>{error.message}</p>}
 				</form>
 			</div>
 		);

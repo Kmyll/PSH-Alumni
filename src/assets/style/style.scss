@@ -533,8 +533,36 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
 		margin-bottom: 2%;
 	}
 }
+.uploadCV {
+	width: 100%;
+	margin-top: 2%;
+	padding: 2.5%;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+}
+
+input[type="file" i] {
+	color: #8c8c8c;
+}
 
 .cvthequePara {
 	text-align: center !important;
 	margin-bottom: 3%;
+}
+.validationBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		padding: 2% 3%;
+		border: 3px solid orange;
+		border-radius: 5px;
+		background-color: white;
+		color: orange;
+		font-weight: bold;
+	}
+	button:disabled {
+		opacity: 0.5;
+	}
 }

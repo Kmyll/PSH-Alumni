@@ -96,7 +96,7 @@ const NavigationNonAuth = () => (
 					<Dropdown.Item text="Formations PSH" as={Link} to="/formations" />
 					<Dropdown.Item text="Etudiant-apprenti" as={Link} to="/apprenti" />
 					<Dropdown.Item text="Evénements" as={Link} to="/eventsAlumni" />
-					<Dropdown.Item text="Recruter des PSH" as={Link} to="/recrutementpsh" />
+					<Dropdown.Item text="Recruter des PSH" as={Link} to="/recruterpsh" />
 					<Dropdown.Item text="Newsletters" as={Link} to="/Newsletter" />
 				</Dropdown.Menu>
 			</Dropdown>
@@ -105,7 +105,7 @@ const NavigationNonAuth = () => (
 			<Dropdown text="Anciens de PSH">
 				<Dropdown.Menu>
 					<Dropdown.Item text="Nos carrières" as={Link} to="/carrieres" />
-					<Dropdown.Item text="FCréateurs d'entreprises" as={Link} to="/createursEntreprise" />
+					<Dropdown.Item text="Créateurs d'entreprises" as={Link} to="/createursEntreprise" />
 					<Dropdown.Item text="Etudiant-apprenti" as={Link} to="/apprenti" />
 					<Dropdown.Item text="Nos partenaires" as={Link} to="/partenaires" />
 					<Dropdown.Item text="Carnet" as={Link} to="/carnet" />

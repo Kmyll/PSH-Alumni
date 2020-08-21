@@ -1,6 +1,10 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
+// import 'dotenv/config';
+
+// const settings = { timestampsInSnapshots: true };
 
 const config = {
 	apiKey            : 'AIzaSyCZDjLFkcFbv-_U0NACLmB8inEudquqZa4',
@@ -15,7 +19,12 @@ const config = {
 
 class Firebase {
 	constructor() {
-		app.initializeApp(config);
+		// app.initializeApp(config);
+
+		/* NOT COMPULSORY, INIT FIRESTORE BUT WORKS FINE WITHOUT */
+		// app.firestore().settings(settings);
+		/* initialize storage */
+		const storage = app.storage();
 
 		/* Helper */
 
