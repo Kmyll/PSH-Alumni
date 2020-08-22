@@ -89,6 +89,13 @@ body {
 	display: flex;
 	.logo {
 		flex-grow: 1;
+		padding-left: 2%;
+		a {
+			img {
+				width: 100%;
+				max-width: 200px;
+			}
+		}
 	}
 	li {
 		margin-right: 2%;
@@ -640,6 +647,7 @@ input[type="file" i] {
 			color: $red;
 			font-weight: bold;
 			font-size: 1.5rem;
+			line-height: 1.5rem;
 		}
 	}
 }
@@ -647,14 +655,21 @@ input[type="file" i] {
 //USERS INTERFACE
 
 .adminUsersList {
-	background-color: #f8f8f8;
 	padding: 2%;
 	margin-bottom: 2%;
 	border-radius: 10px;
 	li {
+		margin-bottom: 2%;
+		padding: 2%;
+		background-color: #f8f8f8;
 		list-style-type: none;
 		display: flex;
 		justify-content: space-between;
+		span {
+			strong {
+				color: $red;
+			}
+		}
 	}
 }
 .adminUsersDetails {

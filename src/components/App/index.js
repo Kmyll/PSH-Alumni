@@ -14,8 +14,9 @@ import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
-import AdminInterfacePage from '../screens/adminInterface';
+import AdminInterface from '../screens/adminInterface';
 import Adherer from '../screens/adherer';
+import JobInterface from '../screens/jobInterface';
 import Ag from '../screens/ag';
 import Agenda from '../screens/agenda';
 import Alumni from '../screens/alumni';
@@ -43,6 +44,8 @@ import ParticiperEvenements from '../screens/participerEvenements';
 import Recrutement from '../screens/recrutement';
 import RecruterPsh from '../screens/recruterpsh';
 import Status from '../screens/status';
+import JobAdPage from '../screens/jobAd';
+import JobListPage from '../screens/jobList';
 
 const App = () => (
 	<Router>
@@ -58,7 +61,10 @@ const App = () => (
 				<Route path={ROUTES.ADMIN} component={AdminPage} />
 
 				{/* SCREENS */}
-				<Route path={ROUTES.ADMININTERFACE} component={AdminInterfacePage} />
+				<Route path={ROUTES.JOBAD} component={JobAdPage} />
+				<Route path={ROUTES.JOBLIST} component={JobListPage} />
+				<Route path={ROUTES.ADMININTERFACE} component={AdminInterface} />
+				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />
 				<Route path={ROUTES.ADHERER} component={Adherer} />
 				<Route path={ROUTES.AG} component={Ag} />
 				<Route path={ROUTES.AGENDA} component={Agenda} />
