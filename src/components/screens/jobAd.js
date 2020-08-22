@@ -85,6 +85,7 @@ class JobAd extends Component {
 
 				<form className="cvthequeForm" onSubmit={this.onSubmit}>
 					<TextField
+						className="marginFormBottom"
 						id="outlined-basic"
 						name="name"
 						label="Intitulé du poste"
@@ -92,7 +93,7 @@ class JobAd extends Component {
 						onChange={this.onChange}
 					/>
 
-					<FormControl variant="outlined">
+					<FormControl variant="outlined" className="selectJob">
 						<InputLabel id="demo-simple-select-outlined-label">contrat de poste</InputLabel>
 						<Select
 							labelId="demo-simple-select-outlined-label"
@@ -111,6 +112,7 @@ class JobAd extends Component {
 					</FormControl>
 
 					<TextField
+						className="marginFormTop"
 						name="place"
 						id="outlined-basic"
 						label="Lieu du poste"
@@ -119,6 +121,7 @@ class JobAd extends Component {
 					/>
 
 					<TextField
+						className="marginFormTop"
 						name="description"
 						multiline
 						rows={8}
@@ -129,6 +132,7 @@ class JobAd extends Component {
 					/>
 
 					<TextField
+						className="marginFormTop"
 						name="contact"
 						id="outlined-basic"
 						label="email ou personne à contacter"
@@ -137,7 +141,7 @@ class JobAd extends Component {
 					/>
 
 					{/* <div className="block image">{this.state.image && <img src={this.state.imageURL} />}</div> */}
-					<div className="validationBtn">
+					<div className="validationBtn ">
 						<button disabled={isInvalid} contrat="submit" onClick={notify}>
 							Envoyer
 						</button>

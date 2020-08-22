@@ -537,9 +537,25 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
 	div {
 		width: 100%;
 		max-width: 600px;
-		margin-bottom: 2%;
 	}
 }
+.MuiSelect-root
+	.MuiSelect-select
+	.MuiSelect-selectMenu
+	.MuiSelect-outlined
+	.MuiInputBase-input
+	.MuiOutlinedInput-input {
+	height: 55px;
+	margin: none !important;
+}
+
+.marginFormTop {
+	margin-top: 2% !important;
+}
+.marginFormBottom {
+	margin-bottom: 2% !important;
+}
+
 .uploadCV {
 	width: 100%;
 	margin-top: 2%;
@@ -562,6 +578,7 @@ input[type="file" i] {
 	align-items: center;
 
 	button {
+		margin-top: 6%;
 		padding: 2% 3%;
 		border: 3px solid orange;
 		border-radius: 5px;
@@ -774,3 +791,5 @@ input[type="file" i] {
 	width: 100%;
 	max-width: 400px;
 }
+
+// JOB AD POST

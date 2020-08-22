@@ -106,7 +106,7 @@ class cvTheque extends Component {
 					<div className="block">
 						<label>Ajoutez votre CV </label>
 						<FileUploader
-							className="uploadCV"
+							className="uploadCV marginFormTop"
 							accept="application/pdf,application/vnd.ms-word"
 							name="image"
 							storageRef={firebase.storage().ref('cv')}
@@ -116,6 +116,7 @@ class cvTheque extends Component {
 					</div>
 
 					<TextField
+						className="marginFormTop"
 						id="outlined-basic"
 						name="lastName"
 						label="Nom de famille"
@@ -124,6 +125,7 @@ class cvTheque extends Component {
 					/>
 
 					<TextField
+						className="marginFormTop"
 						id="outlined-basic"
 						name="firstName"
 						label="Prénom"
@@ -132,6 +134,7 @@ class cvTheque extends Component {
 					/>
 
 					<TextField
+						className="marginFormTop"
 						name="job"
 						id="outlined-basic"
 						label="Poste recherché"
