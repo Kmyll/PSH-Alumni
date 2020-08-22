@@ -46,7 +46,7 @@ const NavigationAuth = ({ authUser }) => (
 
 		{!!authUser.roles[ROLES.ADMIN] && (
 			<li>
-				<Link to={ROUTES.ADMIN}>Admin</Link>
+				<Link to={'/adminInterface'}>Admin</Link>
 			</li>
 		)}
 		<li className="signOutPara">

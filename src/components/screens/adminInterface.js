@@ -10,11 +10,11 @@ import { withAuthorization, withEmailVerification } from '../Session';
 import { UserList, UserItem } from '../Users';
 import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
-import { Admin } from '../../assets/img/admin.png';
+import Admin from '../../assets/img/admin.png';
 
 const AdminPage = () => (
 	<div className="container">
-		<h1>Admin interface</h1>
+		<h1>Interface administrateur</h1>
 		<section className="adminList">
 			<Link to={ROUTES.ADMIN}>
 				<GrUserSettings /> <span>Utilisateurs</span>
@@ -26,7 +26,7 @@ const AdminPage = () => (
 				<BsCardChecklist /> <span>liste des CV</span>
 			</Link>
 		</section>
-		<img src={Admin} />
+		<img className="adminPicture" src={Admin} />
 	</div>
 );
 

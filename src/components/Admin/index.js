@@ -8,10 +8,8 @@ import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
 
 const AdminPage = () => (
-	<div>
-		<h1>Admin</h1>
-		<p>The Admin Page is accessible by every signed in admin user.</p>
-
+	<div className="container">
+		<h1>Gestion des utilisateurs</h1>
 		<Switch>
 			<Route exact path={ROUTES.ADMIN_DETAILS} component={UserItem} />
 			<Route exact path={ROUTES.ADMIN} component={UserList} />

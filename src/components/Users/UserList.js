@@ -38,19 +38,18 @@ class UserList extends Component {
 
 		return (
 			<div>
-				<h2>Users</h2>
 				{loading && <div>Loading ...</div>}
-				<ul>
+				<ul className="adminUsersList">
 					{users.map((user) => (
 						<li key={user.uid}>
 							<span>
-								<strong>ID:</strong> {user.uid}
+								<strong>ID :</strong> {user.uid}
 							</span>
 							<span>
-								<strong>E-Mail:</strong> {user.email}
+								<strong>E-Mail :</strong> {user.email}
 							</span>
 							<span>
-								<strong>Username:</strong> {user.username}
+								<strong>nom :</strong> {user.username}
 							</span>
 							<span>
 								<Link
@@ -59,7 +58,7 @@ class UserList extends Component {
 										state    : { user }
 									}}
 								>
-									Details
+									Détails
 								</Link>
 							</span>
 						</li>

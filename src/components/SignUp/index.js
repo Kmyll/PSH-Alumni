@@ -6,9 +6,12 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
 const SignUpPage = () => (
-	<div>
-		<h1>SignUp</h1>
+	<div className="container">
+		<h1>Inscriptions</h1>
 		<SignUpForm />
 	</div>
 );
@@ -25,11 +28,9 @@ const INITIAL_STATE = {
 const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
-  An account with this E-Mail address already exists.
-  Try to login with this account instead. If you think the
-  account is already used from one of the social logins, try
-  to sign in with one of them. Afterward, associate your accounts
-  on your personal account page.
+Un compte avec cet email existe déjà. 
+Essayez de vous conecter avec cette adresse email. 
+Si vous avez perdu votre mot de passe, cliquez sur mot de passe oublié.
 `;
 
 class SignUpFormBase extends Component {
@@ -92,26 +93,54 @@ class SignUpFormBase extends Component {
 		const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || email === '' || username === '';
 
 		return (
-			<form onSubmit={this.onSubmit}>
-				<input name="username" value={username} onChange={this.onChange} type="text" placeholder="Full Name" />
-				<input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
-				<input
+			<form className="registerForm" onSubmit={this.onSubmit}>
+				<TextField
+					id="outlined-basic"
+					label="Nom complet"
+					variant="outlined"
+					name="username"
+					value={username}
+					onChange={this.onChange}
+					type="text"
+				/>
+
+				<TextField
+					id="outlined-basic"
+					label="adresse email"
+					variant="outlined"
+					name="email"
+					value={email}
+					onChange={this.onChange}
+					type="email"
+				/>
+				<TextField
+					id="outlined-basic"
+					label="Mot de passe"
+					variant="outlined"
 					name="passwordOne"
 					value={passwordOne}
 					onChange={this.onChange}
 					type="password"
-					placeholder="Password"
 				/>
-				<input
+				<TextField
+					id="outlined-basic"
+					label="Mot de passe"
+					variant="outlined"
 					name="passwordTwo"
 					value={passwordTwo}
 					onChange={this.onChange}
 					type="password"
-					placeholder="Confirm Password"
 				/>
+
 				<label>
-					Admin:
-					<input name="isAdmin" type="checkbox" checked={isAdmin} onChange={this.onChangeCheckbox} />
+					Admin :
+					<input
+						className="adminCheckbox"
+						name="isAdmin"
+						type="checkbox"
+						checked={isAdmin}
+						onChange={this.onChangeCheckbox}
+					/>
 				</label>
 				<button disabled={isInvalid} type="submit">
 					Sign Up

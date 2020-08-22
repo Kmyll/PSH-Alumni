@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { withFirebase } from '../Firebase';
+import adminUsers from '../../assets/img/adminUsers.png';
 
 class UserItem extends Component {
 	constructor(props) {
@@ -41,27 +42,32 @@ class UserItem extends Component {
 
 		return (
 			<div>
-				<h2>User ({this.props.match.params.id})</h2>
+				{/* <h2>Vous êtes sur le profil utilisateur : {this.props.match.params.id}</h2> */}
 				{loading && <div>Loading ...</div>}
-
 				{user && (
-					<div>
-						<span>
-							<strong>ID:</strong> {user.uid}
-						</span>
-						<span>
-							<strong>E-Mail:</strong> {user.email}
-						</span>
-						<span>
-							<strong>Username:</strong> {user.username}
-						</span>
-						<span>
+					<div className="adminUsersDetails">
+						<section>
+							<span>
+								<strong>ID :</strong> {user.uid}
+							</span>
+							<span>
+								<strong>E-Mail :</strong> {user.email}
+							</span>
+							<span>
+								<strong>nom :</strong> {user.username}
+							</span>
+						</section>
+						<section className="usersAdminBtn">
 							<button type="button" onClick={this.onSendPasswordResetEmail}>
-								Send Password Reset
+								Réinitialiser le mot de passe
 							</button>
-						</span>
+							<button type="button" onClick={this.onSendPasswordResetEmail}>
+								Supprimer l'utilisateur
+							</button>
+						</section>
 					</div>
 				)}
+				<img className="adminUsersPic" src={adminUsers} />{' '}
 			</div>
 		);
 	}

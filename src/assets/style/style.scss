@@ -561,6 +561,7 @@ input[type="file" i] {
 		background-color: white;
 		color: orange;
 		font-weight: bold;
+		outline: none;
 	}
 	button:disabled {
 		opacity: 0.5;
@@ -605,6 +606,11 @@ input[type="file" i] {
 
 // GENERAL INTERFACE
 
+.adminPicture {
+	display: block;
+	margin: 2% auto;
+}
+
 .adminList {
 	display: flex;
 	flex-direction: row;
@@ -636,4 +642,120 @@ input[type="file" i] {
 			font-size: 1.5rem;
 		}
 	}
+}
+
+//USERS INTERFACE
+
+.adminUsersList {
+	background-color: #f8f8f8;
+	padding: 2%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+	li {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.adminUsersDetails {
+	display: flex;
+	section {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		span {
+			padding: 2%;
+			margin: 2% 2% 2% 0;
+			font-size: 1.4rem;
+			strong {
+				color: $red;
+			}
+		}
+	}
+	.usersAdminBtn {
+		margin-left: 30%;
+		margin-top: 1%;
+		button {
+			padding: 4%;
+			width: 50%;
+			margin-bottom: 4%;
+			border: none;
+			border-radius: 10px;
+			outline: none;
+			cursor: pointer;
+		}
+		button:nth-last-child(1) {
+			background-color: $red;
+			color: white;
+		}
+	}
+}
+
+.adminUsersPic {
+	display: block;
+	margin: 8% auto 0 auto;
+	width: 100%;
+	max-width: 500px;
+}
+
+// SIGN UP
+
+.registerForm {
+	display: flex;
+	flex-direction: column;
+	margin: 2% 25%;
+	justify-content: center;
+	align-items: center;
+	div {
+		width: 100%;
+		margin-bottom: 3%;
+	}
+	label {
+		display: flex;
+		flex-direction: row;
+		margin-right: 1%;
+		width: 100%;
+		input {
+			margin-left: 1px;
+			width: 50px;
+		}
+	}
+	button {
+		padding: 2% 3%;
+		border: 3px solid orange;
+		border-radius: 5px;
+		background-color: white;
+		color: orange;
+		width: 150px;
+		font-weight: bold;
+		outline: none;
+	}
+	button:disabled {
+		opacity: 0.5;
+	}
+}
+
+// CONFIRMATION EMAIL
+
+.confirmationEmail {
+	padding: 2%;
+	display: block;
+	margin: 5% auto 3% auto;
+	border: 3px solid $red;
+	border-radius: 5px;
+	background-color: white;
+	color: $red;
+	width: 500px;
+	font-weight: bold;
+	outline: none;
+}
+.confirmationEmail:disabled {
+	opacity: 0.5;
+}
+
+.EmailUsersPic {
+	display: block;
+	margin: 8% auto 0 auto;
+	width: 100%;
+	max-width: 400px;
 }
