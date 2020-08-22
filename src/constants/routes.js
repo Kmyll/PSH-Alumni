@@ -9,6 +9,7 @@ export const ADMIN_DETAILS = '/admin/:id';
 
 // SCREENS PAGES
 
+export const ADMININTERFACE = '/adminInterface';
 export const ADHERER = '/adherer';
 export const AG = '/ag';
 export const AGENDA = '/agenda';

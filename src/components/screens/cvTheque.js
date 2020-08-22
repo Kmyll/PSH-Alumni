@@ -69,6 +69,7 @@ class cvTheque extends Component {
 			lastName  : this.state.lastName,
 			firstName : this.state.firstName,
 			imageURL  : this.state.imageURL,
+			image     : this.state.image,
 			job       : this.state.job
 		});
 

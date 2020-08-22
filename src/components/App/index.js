@@ -14,6 +14,7 @@ import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
+import AdminInterfacePage from '../screens/adminInterface';
 import Adherer from '../screens/adherer';
 import Ag from '../screens/ag';
 import Agenda from '../screens/agenda';
@@ -57,6 +58,7 @@ const App = () => (
 				<Route path={ROUTES.ADMIN} component={AdminPage} />
 
 				{/* SCREENS */}
+				<Route path={ROUTES.ADMININTERFACE} component={AdminInterfacePage} />
 				<Route path={ROUTES.ADHERER} component={Adherer} />
 				<Route path={ROUTES.AG} component={Ag} />
 				<Route path={ROUTES.AGENDA} component={Agenda} />
