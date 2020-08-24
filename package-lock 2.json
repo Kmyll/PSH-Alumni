@@ -4788,6 +4788,24 @@
         }
       }
     },
+    "disposable-component": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/disposable-component/-/disposable-component-1.0.0.tgz",
+      "integrity": "sha512-bwxavnYOASONHbr5b1Uh4DesBcH22YFPP8kSEWbbiIHyWzs4APiFr/q7er5mBueYvLWHD9JCBsRs5U/4MOK1Mg==",
+      "requires": {
+        "rxjs": "^6.4.0"
+      },
+      "dependencies": {
+        "rxjs": {
+          "version": "6.6.2",
+          "resolved": "https://registry.npmjs.org/rxjs/-/rxjs-6.6.2.tgz",
+          "integrity": "sha512-BHdBMVoWC2sL26w//BCu3YzKT4s2jip/WhwsGEDmeKYBhKDZeYezVUnHatYB7L85v5xs0BAQmg6BEYJEKxBabg==",
+          "requires": {
+            "tslib": "^1.9.0"
+          }
+        }
+      }
+    },
     "dns-equal": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/dns-equal/-/dns-equal-1.0.0.tgz",
@@ -10918,6 +10936,11 @@
         "lower-case": "^1.1.1"
       }
     },
+    "no-scroll": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/no-scroll/-/no-scroll-2.1.1.tgz",
+      "integrity": "sha512-YTzGAJOo/B6hkodeT5SKKHpOhAzjMfkUCCXjLJwjWk2F4/InIg+HbdH9kmT7bKpleDuqLZDTRy2OdNtAj0IVyQ=="
+    },
     "node-ensure": {
       "version": "0.0.0",
       "resolved": "https://registry.npmjs.org/node-ensure/-/node-ensure-0.0.0.tgz",
@@ -13926,6 +13949,20 @@
         }
       }
     },
+    "react-disposable-decorator": {
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/react-disposable-decorator/-/react-disposable-decorator-4.0.2.tgz",
+      "integrity": "sha512-gfYfIdZigM52zK0hd56Nwoac+BxELWo8/eXj/qhNkdVozMBBA1ydc7+DoZqicbLGOZGXbGsAsnA6jn96iFbH+g=="
+    },
+    "react-disposable-modal": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/react-disposable-modal/-/react-disposable-modal-1.0.0.tgz",
+      "integrity": "sha512-9XhA+l9A7L58l7RQdULNdjzpmKVzbuudBOrUW63dUOHdIYh7MA9fMIfKjtJ7JjS6TE3JMb0SXhgCj25U4gxyfg==",
+      "requires": {
+        "disposable-component": "^1.0.0",
+        "react-disposable-decorator": "^4.0.0"
+      }
+    },
     "react-dom": {
       "version": "16.13.1",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-16.13.1.tgz",
@@ -14181,6 +14218,15 @@
             "object-assign": "^4.1.1"
           }
         }
+      }
+    },
+    "react-responsive-modal": {
+      "version": "5.0.3",
+      "resolved": "https://registry.npmjs.org/react-responsive-modal/-/react-responsive-modal-5.0.3.tgz",
+      "integrity": "sha512-iLEkCv/wJZ/zvCEh9eirxdA4hKj7fVAsiaR408XLmEKSKAsQLScSAF3neJN3ZRiGzvyhk4cYTflJfjE9eqLiIQ==",
+      "requires": {
+        "classnames": "^2.2.6",
+        "no-scroll": "^2.1.1"
       }
     },
     "react-router": {
