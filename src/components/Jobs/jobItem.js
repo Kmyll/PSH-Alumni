@@ -44,10 +44,6 @@ class JobItem extends Component {
 		this.unsubscribe && this.unsubscribe();
 	}
 
-	onSendPasswordResetEmail = () => {
-		this.props.firebase.doPasswordReset(this.state.annonce.email);
-	};
-
 	//delete user
 	deleteAccount = () => {
 		console.log('mounted');

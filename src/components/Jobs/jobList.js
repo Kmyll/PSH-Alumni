@@ -41,10 +41,10 @@ class JobList extends Component {
 								<strong>ID :</strong> {annonce.uid}
 							</span>
 							<span>
-								<strong>Titre :</strong> {annonce.name}
+								<strong>Intitulé de l'annonce :</strong> {annonce.name}
 							</span>
 							<span>
-								<strong>Contrat:</strong> {annonce.contrat}
+								<strong>Type de contrat:</strong> {annonce.contrat}
 							</span>
 							<span>
 								<strong>lieu :</strong> {annonce.place}

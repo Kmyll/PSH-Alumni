@@ -6,6 +6,11 @@ export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 export const ADMIN = '/admin';
 export const ADMIN_DETAILS = '/admin/:id';
+export const JOBS = '/job';
+export const JOBS_DETAILS = '/job/:id';
+
+export const OFFRES = '/offres';
+export const OFFRES_DETAILS = '/offres/:id';
 
 // SCREENS PAGES
 
@@ -34,7 +39,6 @@ export const HISTOIRE = '/histoire';
 export const INCUBATEUR = '/incubateur';
 export const MISSIONS = '/missions';
 export const NEWSLETTER = '/newsletter';
-export const OFFRES = '/offres';
 export const OFFRESEMPLOI = '/offresemploi';
 export const PARTENAIRES = '/partenaires';
 export const PARTICIPEREVENEMENTS = '/ParticiperEvenements';

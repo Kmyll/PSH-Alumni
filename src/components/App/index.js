@@ -38,7 +38,6 @@ import Histoire from '../screens/histoire';
 import Incubateur from '../screens/incubateur';
 import Missions from '../screens/missions';
 import Newsletter from '../screens/newsletter';
-import Offres from '../screens/offres';
 import OffresEmploi from '../screens/offresEmploi';
 import Partenaires from '../screens/partenaires';
 import ParticiperEvenements from '../screens/participerEvenements';
@@ -88,7 +87,7 @@ const App = () => (
 				<Route path={ROUTES.INCUBATEUR} component={Incubateur} />
 				<Route path={ROUTES.MISSIONS} component={Missions} />
 				<Route path={ROUTES.NEWSLETTER} component={Newsletter} />
-				<Route path={ROUTES.OFFRES} component={Offres} />
+
 				<Route path={ROUTES.OFFRESEMPLOI} component={OffresEmploi} />
 				<Route path={ROUTES.PARTENAIRES} component={Partenaires} />
 				<Route path={ROUTES.PARTICIPEREVENEMENTS} component={ParticiperEvenements} />
