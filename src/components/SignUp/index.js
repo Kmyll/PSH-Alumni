@@ -9,6 +9,12 @@ import * as ROLES from '../../constants/roles';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 const SignUpPage = () => (
 	<div className="container">
 		<h1>Inscriptions</h1>
@@ -21,6 +27,9 @@ const INITIAL_STATE = {
 	email       : '',
 	passwordOne : '',
 	passwordTwo : '',
+	terminale   : '',
+	bts         : '',
+	licences    : '',
 	isAdmin     : false,
 	error       : null
 };
@@ -41,7 +50,7 @@ class SignUpFormBase extends Component {
 	}
 
 	onSubmit = (event) => {
-		const { username, email, passwordOne, isAdmin } = this.state;
+		const { username, email, passwordOne, terminale, bts, licences, isAdmin } = this.state;
 		const roles = {};
 
 		if (isAdmin) {
@@ -56,6 +65,9 @@ class SignUpFormBase extends Component {
 					{
 						username,
 						email,
+						terminale,
+						bts,
+						licences,
 						roles
 					},
 					{ merge: true }
@@ -88,10 +100,10 @@ class SignUpFormBase extends Component {
 	};
 
 	render() {
-		const { username, email, passwordOne, passwordTwo, isAdmin, error } = this.state;
+		const { username, email, passwordOne, passwordTwo, isAdmin, terminale, bts, licences, error } = this.state;
 
 		const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || email === '' || username === '';
-
+		console.log(this.state);
 		return (
 			<form className="registerForm" onSubmit={this.onSubmit}>
 				<TextField
@@ -131,6 +143,75 @@ class SignUpFormBase extends Component {
 					onChange={this.onChange}
 					type="password"
 				/>
+
+				{/* FILIERES */}
+
+				<FormControl variant="outlined">
+					<InputLabel id="demo-simple-select-outlined-label">Section terminale</InputLabel>
+					<Select
+						labelId="demo-simple-select-outlined-label"
+						id="demo-simple-select-outlined"
+						value={terminale}
+						onChange={this.onChange}
+						name="terminale"
+					>
+						<MenuItem value="">
+							<em>None</em>
+						</MenuItem>
+						<MenuItem value="ES">ES</MenuItem>
+						<MenuItem value="L">L</MenuItem>
+						<MenuItem value="STMG">STMG</MenuItem>
+						<MenuItem value="ST2S">ST2S</MenuItem>
+					</Select>
+				</FormControl>
+
+				<FormControl variant="outlined">
+					<InputLabel id="demo-simple-select-outlined-label">Section BTS</InputLabel>
+					<Select
+						labelId="demo-simple-select-outlined-label"
+						id="demo-simple-select-outlined"
+						value={bts}
+						onChange={this.onChange}
+						label="BTS"
+						name="bts"
+					>
+						<MenuItem value="">
+							<em>None</em>
+						</MenuItem>
+						<MenuItem value="Gestion_PME">Gestion de la PME</MenuItem>
+						<MenuItem value="Action_Manageriale">Support à l’Action Managériale</MenuItem>
+						<MenuItem value="Comptabilite_Gestion">Comptabilité et Gestion</MenuItem>
+						<MenuItem value="Banque_conseiller_clientele">Banque Conseiller de Clientèle</MenuItem>
+						<MenuItem value="Communication">Communication</MenuItem>
+						<MenuItem value="Dietetique">Diététique</MenuItem>
+						<MenuItem value="Technico_commercial">Technico-commercial</MenuItem>
+					</Select>
+				</FormControl>
+
+				<FormControl variant="outlined">
+					<InputLabel id="demo-simple-select-outlined-label">Licences et Bachelors</InputLabel>
+					<Select
+						labelId="demo-simple-select-outlined-label"
+						id="demo-simple-select-outlined"
+						value={licences}
+						onChange={this.onChange}
+						label="BTS"
+						name="licences"
+					>
+						<MenuItem value="">
+							<em>None</em>
+						</MenuItem>
+						<MenuItem value="licenceProBanque">Licence professionnelle banque</MenuItem>
+						<MenuItem value="certificationOME">Certification OME</MenuItem>
+						<MenuItem value="CertificatCommunicationDigitale">
+							Certificat de communication digitale
+						</MenuItem>
+						<MenuItem value="BachelorCoventryUniversity">Bachelor of Coventry University</MenuItem>
+						<MenuItem value="ManagementProjetsInternationaux">
+							Licence professionelle management de projets internationaux
+						</MenuItem>
+					</Select>
+				</FormControl>
 
 				<label>
 					Admin :

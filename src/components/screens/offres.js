@@ -53,9 +53,8 @@ class offres extends Component {
 		const list = Object.keys(annonces).map((annonce) => (
 			<div className="offers">
 				<li key={annonces.id}>
-					<div>
-						{annonces[annonce].name} {annonces[annonce].place}
-					</div>
+					<div>{annonces[annonce].name}</div>
+					<div>{annonces[annonce].place}</div>
 					<div>{annonces[annonce].contrat}</div>
 					<div>{annonces[annonce].created.seconds}</div>
 					<div>

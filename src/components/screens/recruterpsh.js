@@ -36,7 +36,7 @@ class recruterpsh extends Component {
 			<div>
 				<li key={cv.id}>
 					<div>
-						{cv[resume].firstName} {cv[resume].lastName}
+						{cv[resume].lastName} {cv[resume].firstName}
 					</div>
 					<div>{cv[resume].job}</div>
 					<a target="_blank" href={cv[resume].imageURL}>

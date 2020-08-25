@@ -36,6 +36,14 @@ class cvTheque extends Component {
 		});
 	};
 
+	// last name in uppercase
+
+	toInputUppercase = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value.toUpperCase()
+		});
+	};
+
 	//Send image
 	handleUploadStart = () => {
 		this.setState({
@@ -121,7 +129,7 @@ class cvTheque extends Component {
 						name="lastName"
 						label="Nom de famille"
 						variant="outlined"
-						onChange={this.onChange}
+						onChange={this.toInputUppercase}
 					/>
 
 					<TextField
