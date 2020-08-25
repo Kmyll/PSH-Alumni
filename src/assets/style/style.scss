@@ -817,3 +817,37 @@ input[type="file" i] {
 		cursor: pointer;
 	}
 }
+
+// JOB LIST DISPLAY FOR ADMIN
+
+.jobListDisplay {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	background-color: #f8f8f8;
+	border-radius: 10px;
+	margin-bottom: 2%;
+	padding: 2%;
+	div {
+		flex: 1;
+	}
+}
+
+.ctaIcons {
+	svg:nth-child(1) {
+		margin-right: 10%;
+		font-size: 20px;
+		margin-bottom: 2px;
+		path {
+			color: $orange;
+		}
+	}
+	svg:nth-child(2) {
+		margin-left: 10%;
+		font-size: 26px;
+		margin-top: 2px;
+		path {
+			color: $red;
+		}
+	}
+}

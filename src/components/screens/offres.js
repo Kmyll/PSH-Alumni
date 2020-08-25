@@ -52,7 +52,7 @@ class offres extends Component {
 		const { annonces, loading, open } = this.state;
 		const list = Object.keys(annonces).map((annonce) => (
 			<div className="offers">
-				<li key={annonces.id}>
+				<li key={annonces.uid}>
 					<div>{annonces[annonce].name}</div>
 					<div>{annonces[annonce].place}</div>
 					<div>{annonces[annonce].contrat}</div>

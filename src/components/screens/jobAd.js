@@ -6,7 +6,6 @@ import 'firebase/storage';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { StyledDropZone } from 'react-drop-zone';
-
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -17,6 +16,7 @@ import { withAuthorization, withEmailVerification } from '../Session';
 import { UserList, UserItem } from '../Users';
 import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
+import newId from '../plugins/newId';
 
 toast.configure();
 
@@ -31,6 +31,7 @@ class JobAd extends Component {
 		super(props);
 
 		this.state = {
+			id          : '',
 			name        : '',
 			contrat     : '',
 			place       : '',
@@ -46,6 +47,11 @@ class JobAd extends Component {
 		});
 	};
 
+	//GENERATE ID
+	componentWillMount() {
+		this.id = newId();
+	}
+
 	//Send texte
 
 	onSubmit = (event, authUser, place) => {
@@ -56,6 +62,7 @@ class JobAd extends Component {
 			timestampsInSnapshots : true
 		});
 		const placeRef = db.collection('annonces').add({
+			id          : this.state.id,
 			created     : firebase.firestore.Timestamp.now(),
 			name        : this.state.name,
 			contrat     : this.state.contrat,
@@ -65,6 +72,7 @@ class JobAd extends Component {
 		});
 
 		this.setState({
+			id          : '',
 			name        : '',
 			contrat     : '',
 			place       : '',
@@ -75,15 +83,26 @@ class JobAd extends Component {
 
 	render() {
 		console.log(this.state);
-		const { name, contrat, place, description, contact, error } = this.state;
+		const { id, name, contrat, place, description, contact, error } = this.state;
 
-		const isInvalid = name === '' || contrat === '' || place === '' || description === '' || contact === '';
+		const isInvalid =
+			id === '' || name === '' || contrat === '' || place === '' || description === '' || contact === '';
 
 		return (
 			<div className="container">
 				<h1>Poster une offre d'emploi ou de stage</h1>
 
 				<form className="cvthequeForm" onSubmit={this.onSubmit}>
+					<TextField
+						className="marginFormBottom hidden"
+						id="outlined-basic"
+						name="id"
+						label="id"
+						variant="outlined"
+						value={this.id}
+						onChange={this.onChange}
+					/>
+
 					<TextField
 						className="marginFormBottom"
 						id="outlined-basic"
@@ -101,6 +120,7 @@ class JobAd extends Component {
 							onChange={this.onChange}
 							label="contrat de poste"
 							name="contrat"
+							value="CDD"
 						>
 							<MenuItem value="CDD">
 								<em>CDD</em>
