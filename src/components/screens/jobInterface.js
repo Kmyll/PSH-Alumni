@@ -17,7 +17,7 @@ const AdminPage = () => (
 			<Link to={ROUTES.JOBAD}>
 				<IoIosBrush /> <span>Poster une offre d'emploi ou de stage</span>
 			</Link>
-			<Link to={ROUTES.JOBLIST}>
+			<Link to={ROUTES.JOBS}>
 				<MdDeleteSweep /> <span>Gérer les offres</span>
 			</Link>
 		</section>

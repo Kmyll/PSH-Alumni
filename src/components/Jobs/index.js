@@ -1,4 +1,4 @@
-import jobList from './jobList';
-import jobItem from './jobItem';
+import JobList from './JobList';
+import JobItem from './JobItem';
 
-export { jobList, jobItem };
+export { JobList, JobItem };

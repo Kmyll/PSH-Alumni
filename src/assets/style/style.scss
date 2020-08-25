@@ -675,6 +675,7 @@ input[type="file" i] {
 	padding: 2%;
 	margin-bottom: 2%;
 	border-radius: 10px;
+
 	li {
 		margin-bottom: 2%;
 		padding: 2%;
@@ -683,6 +684,7 @@ input[type="file" i] {
 		display: flex;
 		justify-content: space-between;
 		span {
+			flex-grow: 1;
 			strong {
 				color: $red;
 			}
