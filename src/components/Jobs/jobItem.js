@@ -3,6 +3,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { withFirebase } from '../Firebase';
 import firebase from '../Firestore';
+import * as ROUTES from '../../constants/routes';
+import * as ROLES from '../../constants/roles';
+import { AuthUserContext } from '../Session';
 
 toast.configure();
 
@@ -61,9 +64,26 @@ class JobItem extends Component {
 			});
 	};
 
+	// ADD EDIT/DELETE BUTTON FOR ADMIN ONLY
+	ctaButtons = () => {
+		if (ROLES.ADMIN) {
+			return (
+				<section className="usersAdminBtn">
+					<button type="button">
+						{' '}
+						{/* onClick={this.onSendPasswordResetEmail} */}
+						Modifier l'annonce
+					</button>
+					<button type="button" onClick={this.deleteAccount}>
+						Supprimer l'annonce
+					</button>
+				</section>
+			);
+		}
+	};
+
 	render() {
 		const { annonce, loading } = this.state;
-
 		return (
 			<div>
 				{/* <h2>Vous êtes sur le profil utilisateur : {this.props.match.params.id}</h2> */}
@@ -86,16 +106,7 @@ class JobItem extends Component {
 							<span>
 								<strong>Contact : </strong> {annonce.contact}
 							</span>
-						</section>
-						<section className="usersAdminBtn">
-							<button type="button">
-								{' '}
-								{/* onClick={this.onSendPasswordResetEmail} */}
-								Modifier l'annonce
-							</button>
-							<button type="button" onClick={this.deleteAccount}>
-								Supprimer l'annonce
-							</button>
+							{this.ctaButtons()}
 						</section>
 					</div>
 				)}
