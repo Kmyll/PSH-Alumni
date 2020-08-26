@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { withFirebase } from '../Firebase';
 import firebase from '../Firestore';
 import * as ROLES from '../../constants/roles';
+import _ from 'lodash';
+import renderHTML from 'react-render-html';
 
 toast.configure();
 
@@ -80,8 +82,19 @@ class JobItem extends Component {
 		}
 	};
 
+	//render posts from firebase
+	renderAnnonce() {
+		return (
+			<div>
+				<p>{renderHTML(this.state.annonce.description)}</p>
+				<p>{renderHTML(this.state.annonce.profil)}</p>
+			</div>
+		);
+	}
+
 	render() {
 		const { annonce, loading } = this.state;
+		console.log('renderANnonce', this.state.annonce.description);
 		return (
 			<div>
 				<h2>{annonce.name}</h2>
@@ -98,12 +111,13 @@ class JobItem extends Component {
 							<span>
 								<strong>Lieu :</strong> {annonce.place}
 							</span>
-							<span>
-								<strong>Description :</strong> {annonce.description}
-							</span>
+
+							<span>Description du poste : {renderHTML(this.state.annonce.description)}</span>
+							<span>Profil recherché : {renderHTML(this.state.annonce.profil)}</span>
 							<span>
 								<strong>Contact : </strong> {annonce.contact}
 							</span>
+
 							{this.ctaButtons()}
 						</section>
 					</div>

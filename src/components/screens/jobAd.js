@@ -13,7 +13,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import ReactQuill from 'react-quill'; // ES6
 import 'react-quill/dist/quill.snow.css'; // ES6
-import renderHTML from 'react-render-html';
 
 import { withAuthorization, withEmailVerification } from '../Session';
 import { UserList, UserItem } from '../Users';
@@ -54,7 +53,12 @@ class JobAd extends Component {
 		this.setState({
 			profil : e
 		});
-		console.log('profil', this.state.profil);
+	};
+
+	onChangeDescription = (e) => {
+		this.setState({
+			description : e
+		});
 	};
 	//Send texte
 
@@ -161,15 +165,10 @@ class JobAd extends Component {
 						modules={JobAd.modules}
 						format={JobAd.formats}
 						value={this.state.description}
-						onChange={this.onHandleChange}
+						onChange={this.onChangeDescription}
 						placeholder="Description succinte de l'entreprise et des tâches du poste à pourvoir"
 						className="marginFormTop"
-						name="profil"
-						multiline
-						rows={8}
-						id="outlined-basic"
-						label="profil"
-						variant="outlined"
+						name="description"
 					/>
 
 					<ReactQuill
@@ -212,19 +211,24 @@ class JobAd extends Component {
 JobAd.modules = {
 	toolbar : [
 		[
-			{ header: '1' },
-			{ header: '2' },
-			{ font: [] }
-		],
-		[
-			{ size: [] }
+			{
+				header : [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					false
+				]
+			},
+			{ font: [] },
+			{ align: [] }
 		],
 		[
 			'bold',
 			'italic',
-			'underline',
-			'strike',
-			'blockquote'
+			'underline'
 		],
 		[
 			{ list: 'ordered' },
@@ -234,12 +238,6 @@ JobAd.modules = {
 			'link',
 			'image',
 			'video'
-		],
-		[
-			'clean'
-		],
-		[
-			'code-block'
 		]
 	]
 };
