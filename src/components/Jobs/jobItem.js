@@ -6,6 +6,7 @@ import firebase from '../Firestore';
 import * as ROLES from '../../constants/roles';
 import _ from 'lodash';
 import renderHTML from 'react-render-html';
+import { Link } from 'react-router-dom';
 
 toast.configure();
 
@@ -68,16 +69,19 @@ class JobItem extends Component {
 	ctaButtons = () => {
 		if (ROLES.ADMIN) {
 			return (
-				<section className="usersAdminBtn">
-					<button type="button">
-						{' '}
-						{/* onClick={this.onSendPasswordResetEmail} */}
-						Modifier l'annonce
-					</button>
-					<button type="button" onClick={this.deleteAccount}>
-						Supprimer l'annonce
-					</button>
-				</section>
+				<div>
+					<hr />
+					<section className="usersAdminBtn">
+						<button type="button">
+							{' '}
+							{/* onClick={this.onSendPasswordResetEmail} */}
+							Modifier l'annonce
+						</button>
+						<button type="button" onClick={this.deleteAccount}>
+							Supprimer l'annonce
+						</button>
+					</section>
+				</div>
 			);
 		}
 	};
@@ -94,30 +98,43 @@ class JobItem extends Component {
 
 	render() {
 		const { annonce, loading } = this.state;
-		console.log('renderANnonce', this.state.annonce.description);
+
 		return (
 			<div>
-				<h2>{annonce.name}</h2>
+				<h2 className="adTitle">{annonce.name}</h2>
 				{loading && <div>Loading ...</div>}
 				{annonce && (
 					<div className="adminUsersDetails">
 						<section>
-							<span>
-								<strong>ID :</strong> {annonce.uid}
-							</span>
-							<span>
-								<strong>contrat :</strong> {annonce.contrat}
-							</span>
-							<span>
-								<strong>Lieu :</strong> {annonce.place}
-							</span>
-
-							<span>Description du poste : {renderHTML(this.state.annonce.description)}</span>
-							<span>Profil recherché : {renderHTML(this.state.annonce.profil)}</span>
-							<span>
-								<strong>Contact : </strong> {annonce.contact}
-							</span>
-
+							<div>
+								<span>
+									<strong>ID :</strong> {annonce.uid}
+								</span>
+								<span>
+									<strong>contrat :</strong> {annonce.contrat}
+								</span>
+								<span>
+									<strong>Lieu :</strong> {annonce.place}
+								</span>
+								<br />
+								<hr />
+							</div>
+							<div>
+								<h3>Description du poste :</h3>
+								<p>{renderHTML(this.state.annonce.description)}</p>
+							</div>
+							<hr />
+							<div className="test">
+								<h3>Profil recherché : </h3>
+								<p>{renderHTML(this.state.annonce.profil)}</p>
+							</div>
+							<hr />
+							<div>
+								<h3>Contact : </h3> {annonce.contact}
+							</div>
+							<Link to="/job">
+								<button className="backBtn">Retour</button>
+							</Link>
 							{this.ctaButtons()}
 						</section>
 					</div>

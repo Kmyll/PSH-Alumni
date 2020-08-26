@@ -155,9 +155,9 @@ class JobAd extends Component {
 							name="type"
 							value={type}
 						>
-							<MenuItem value="temps_complet">Temps complet</MenuItem>
-							<MenuItem value="temps_partiel">Temps partiel</MenuItem>
-							<MenuItem value="mi_temps">Mi-temps</MenuItem>
+							<MenuItem value="temps complet">Temps complet</MenuItem>
+							<MenuItem value="temps partiel">Temps partiel</MenuItem>
+							<MenuItem value="mi temps">Mi-temps</MenuItem>
 						</Select>
 					</FormControl>
 
@@ -179,11 +179,6 @@ class JobAd extends Component {
 						placeholder="Description du profil recherché"
 						className="marginFormTop"
 						name="profil"
-						multiline
-						rows={8}
-						id="outlined-basic"
-						label="profil"
-						variant="outlined"
 					/>
 
 					<TextField
