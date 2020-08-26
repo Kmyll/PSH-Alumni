@@ -11,6 +11,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import ReactQuill from 'react-quill'; // ES6
+import 'react-quill/dist/quill.snow.css'; // ES6
+import renderHTML from 'react-render-html';
 
 import { withAuthorization, withEmailVerification } from '../Session';
 import { UserList, UserItem } from '../Users';
@@ -31,9 +34,11 @@ class JobAd extends Component {
 
 		this.state = {
 			name        : '',
+			type        : '',
 			contrat     : '',
 			place       : '',
 			description : '',
+			profil      : '',
 			contact     : ''
 		};
 	}
@@ -45,6 +50,12 @@ class JobAd extends Component {
 		});
 	};
 
+	onHandleChange = (e) => {
+		this.setState({
+			profil : e
+		});
+		console.log('profil', this.state.profil);
+	};
 	//Send texte
 
 	onSubmit = (event, authUser, place) => {
@@ -57,26 +68,37 @@ class JobAd extends Component {
 		const placeRef = db.collection('annonces').add({
 			created     : firebase.firestore.Timestamp.now(),
 			name        : this.state.name,
+			type        : this.state.type,
 			contrat     : this.state.contrat,
 			place       : this.state.place,
 			description : this.state.description,
+			profil      : this.state.profil,
 			contact     : this.state.contact
 		});
 
 		this.setState({
 			name        : '',
+			type        : '',
 			contrat     : '',
 			place       : '',
 			description : '',
+			profil      : '',
 			contact     : ''
 		});
 	};
 
 	render() {
 		console.log(this.state);
-		const { name, contrat, place, description, contact, error } = this.state;
+		const { name, type, contrat, place, description, profil, contact, error } = this.state;
 
-		const isInvalid = name === '' || contrat === '' || place === '' || description === '' || contact === '';
+		const isInvalid =
+			name === '' ||
+			type === '' ||
+			contrat === '' ||
+			place === '' ||
+			description === '' ||
+			profil === '' ||
+			contact === '';
 
 		return (
 			<div className="container">
@@ -89,22 +111,22 @@ class JobAd extends Component {
 						name="name"
 						label="Intitulé du poste"
 						variant="outlined"
-						onChange={this.onChange}
+						onChange={(e) => {
+							this.setState({ name: e.target.value });
+						}}
 					/>
 
 					<FormControl variant="outlined" className="selectJob">
-						<InputLabel id="demo-simple-select-outlined-label">contrat de poste</InputLabel>
+						<InputLabel id="demo-simple-select-outlined-label">Contrat de poste</InputLabel>
 						<Select
 							labelId="demo-simple-select-outlined-label"
 							id="demo-simple-select-outlined"
 							onChange={this.onChange}
 							label="contrat de poste"
 							name="contrat"
-							value="CDD"
+							value={contrat}
 						>
-							<MenuItem value="CDD">
-								<em>CDD</em>
-							</MenuItem>
+							<MenuItem value="CDD">CDD</MenuItem>
 							<MenuItem value="CDI">CDI</MenuItem>
 							<MenuItem value="Stage">Stage</MenuItem>
 							<MenuItem value="Alternance">Alternance</MenuItem>
@@ -112,23 +134,57 @@ class JobAd extends Component {
 					</FormControl>
 
 					<TextField
-						className="marginFormTop"
+						className="marginFormTop marginFormBottom"
 						name="place"
 						id="outlined-basic"
 						label="Lieu du poste"
 						variant="outlined"
 						onChange={this.onChange}
 					/>
+					<FormControl variant="outlined" className="selectJob">
+						<InputLabel id="demo-simple-select-outlined-label">Type de poste</InputLabel>
+						<Select
+							labelId="demo-simple-select-outlined-label"
+							id="demo-simple-select-outlined"
+							onChange={this.onChange}
+							label="Type de poste"
+							name="type"
+							value={type}
+						>
+							<MenuItem value="temps_complet">Temps complet</MenuItem>
+							<MenuItem value="temps_partiel">Temps partiel</MenuItem>
+							<MenuItem value="mi_temps">Mi-temps</MenuItem>
+						</Select>
+					</FormControl>
 
-					<TextField
+					<ReactQuill
+						modules={JobAd.modules}
+						format={JobAd.formats}
+						value={this.state.description}
+						onChange={this.onHandleChange}
+						placeholder="Description succinte de l'entreprise et des tâches du poste à pourvoir"
 						className="marginFormTop"
-						name="description"
+						name="profil"
 						multiline
 						rows={8}
 						id="outlined-basic"
-						label="Description"
+						label="profil"
 						variant="outlined"
-						onChange={this.onChange}
+					/>
+
+					<ReactQuill
+						modules={JobAd.modules}
+						format={JobAd.formats}
+						value={this.state.profil}
+						onChange={this.onHandleChange}
+						placeholder="Description du profil recherché"
+						className="marginFormTop"
+						name="profil"
+						multiline
+						rows={8}
+						id="outlined-basic"
+						label="profil"
+						variant="outlined"
 					/>
 
 					<TextField
@@ -152,6 +208,58 @@ class JobAd extends Component {
 		);
 	}
 }
+
+JobAd.modules = {
+	toolbar : [
+		[
+			{ header: '1' },
+			{ header: '2' },
+			{ font: [] }
+		],
+		[
+			{ size: [] }
+		],
+		[
+			'bold',
+			'italic',
+			'underline',
+			'strike',
+			'blockquote'
+		],
+		[
+			{ list: 'ordered' },
+			{ list: 'bullet' }
+		],
+		[
+			'link',
+			'image',
+			'video'
+		],
+		[
+			'clean'
+		],
+		[
+			'code-block'
+		]
+	]
+};
+
+JobAd.formats = [
+	'header',
+	'font',
+	'size',
+	'bold',
+	'italic',
+	'underline',
+	'strike',
+	'blockquote',
+	'list',
+	'bullet',
+	'link',
+	'image',
+	'video',
+	'code-block'
+];
 
 const condition = (authUser) => authUser && !!authUser.roles[ROLES.ADMIN];
 

@@ -3,15 +3,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { withFirebase } from '../Firebase';
 import firebase from '../Firestore';
-import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
-import { AuthUserContext } from '../Session';
 
 toast.configure();
 
 const notify = () => {
 	if (this.state.isVerified) {
-		toast.success("L'utilisateur a bien été supprimé.");
+		toast.success("L'offre a bien été supprimée'.");
 	} else {
 		toast.error('Une erreur est survenue, merci de réessayer.');
 	}
@@ -86,7 +84,7 @@ class JobItem extends Component {
 		const { annonce, loading } = this.state;
 		return (
 			<div>
-				{/* <h2>Vous êtes sur le profil utilisateur : {this.props.match.params.id}</h2> */}
+				<h2>{annonce.name}</h2>
 				{loading && <div>Loading ...</div>}
 				{annonce && (
 					<div className="adminUsersDetails">

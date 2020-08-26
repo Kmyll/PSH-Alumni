@@ -33,6 +33,7 @@ class JobList extends Component {
 
 		return (
 			<div>
+				<h1>Liste des offres, emplois et stages</h1>
 				{loading && <div>Loading ...</div>}
 				<ul className="adminUsersList">
 					{annonces.map((annonce) => (
