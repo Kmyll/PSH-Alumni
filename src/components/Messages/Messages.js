@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { AuthUserContext } from '../Session';
 import { withFirebase } from '../Firebase';
 import MessageList from './MessageList';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 class Messages extends Component {
 	constructor(props) {
@@ -94,7 +95,11 @@ class Messages extends Component {
 							</button>
 						)}
 
-						{loading && <div>Loading ...</div>}
+						{loading && (
+							<div className="loaderImg">
+								<img src={Loader} />
+							</div>
+						)}
 
 						{messages && (
 							<MessageList

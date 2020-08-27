@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { withFirebase } from '../Firebase';
 import adminUsers from '../../assets/img/adminUsers.png';
 import firebase from '../Firestore';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 toast.configure();
 
@@ -72,19 +73,25 @@ class UserItem extends Component {
 		return (
 			<div>
 				{/* <h2>Vous êtes sur le profil utilisateur : {this.props.match.params.id}</h2> */}
-				{loading && <div>Loading ...</div>}
+				{loading && (
+					<div className="loaderImg">
+						<img src={Loader} />
+					</div>
+				)}
 				{user && (
 					<div className="adminUsersDetails">
 						<section>
-							<span>
-								<strong>ID :</strong> {user.uid}
-							</span>
-							<span>
-								<strong>E-Mail :</strong> {user.email}
-							</span>
-							<span>
-								<strong>nom :</strong> {user.username}
-							</span>
+							<div>
+								<span>
+									<strong>ID :</strong> {user.uid}
+								</span>
+								<span>
+									<strong>E-Mail :</strong> {user.email}
+								</span>
+								<span>
+									<strong>nom :</strong> {user.username}
+								</span>
+							</div>
 						</section>
 						<section className="usersAdminBtn">
 							<button type="button" onClick={this.onSendPasswordResetEmail}>

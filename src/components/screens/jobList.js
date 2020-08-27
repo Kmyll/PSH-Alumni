@@ -13,6 +13,7 @@ import * as ROUTES from '../../constants/routes';
 import firebase from '../Firestore';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 toast.configure();
 

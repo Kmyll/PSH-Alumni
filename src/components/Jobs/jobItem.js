@@ -7,6 +7,7 @@ import * as ROLES from '../../constants/roles';
 import _ from 'lodash';
 import renderHTML from 'react-render-html';
 import { Link } from 'react-router-dom';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 toast.configure();
 
@@ -102,7 +103,11 @@ class JobItem extends Component {
 		return (
 			<div>
 				<h2 className="adTitle">{annonce.name}</h2>
-				{loading && <div>Loading ...</div>}
+				{loading && (
+					<div className="loaderImg">
+						<img src={Loader} />
+					</div>
+				)}
 				{annonce && (
 					<div className="adminUsersDetails">
 						<section>

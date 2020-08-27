@@ -23,7 +23,7 @@ const AdminPage = () => (
 			<Link to={ROUTES.SIGN_UP}>
 				<BiLogInCircle /> <span>Inscriptions</span>
 			</Link>
-			<Link to="#">
+			<Link to={ROUTES.RESUME}>
 				<BsCardChecklist /> <span>liste des CV</span>
 			</Link>
 			<Link to={ROUTES.JOBINTERFACE}>

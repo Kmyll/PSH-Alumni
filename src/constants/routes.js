@@ -12,6 +12,9 @@ export const JOBS_DETAILS = '/job/:id';
 export const OFFRES = '/offres';
 export const OFFRES_DETAILS = '/offres/:id';
 
+export const RESUME = '/adminResume';
+export const RESUME_DETAILS = '/adminResume/:id';
+
 // SCREENS PAGES
 
 export const ADMININTERFACE = '/adminInterface';

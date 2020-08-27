@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 class UserList extends Component {
 	constructor(props) {
@@ -37,8 +38,12 @@ class UserList extends Component {
 
 		return (
 			<div>
-				{loading && <div>Loading ...</div>}
-				<ul className="adminUsersList">
+				{loading && (
+					<div className="loaderImg">
+						<img src={Loader} />
+					</div>
+				)}
+				<ul className="adminResumeList">
 					{users.map((user) => (
 						<li key={user.uid}>
 							<span>

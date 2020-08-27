@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
 import firebase from '../Firestore';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 class OffresItem extends Component {
 	constructor(props) {
@@ -38,7 +39,11 @@ class OffresItem extends Component {
 		return (
 			<div>
 				{/* <h2>Vous êtes sur le profil utilisateur : {this.props.match.params.id}</h2> */}
-				{loading && <div>Loading ...</div>}
+				{loading && (
+					<div className="loaderImg">
+						<img src={Loader} />
+					</div>
+				)}
 				{annonce && (
 					<div className="adminUsersDetails">
 						<section>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Loader from '../../assets/img/loader/loader2.gif';
 
 class JobList extends Component {
 	constructor(props) {
@@ -34,13 +35,17 @@ class JobList extends Component {
 		return (
 			<div>
 				<h1>Liste des offres, emplois et stages</h1>
-				{loading && <div>Loading ...</div>}
+				{loading && (
+					<div className="loaderImg">
+						<img src={Loader} />
+					</div>
+				)}
 				<ul className="adminUsersList">
 					{annonces.map((annonce) => (
 						<li key={annonce.uid}>
-							<span>
+							{/* <span>
 								<strong>ID :</strong> {annonce.uid}
-							</span>
+							</span> */}
 							<span>
 								<strong>Intitulé de l'annonce :</strong> {annonce.name}
 							</span>

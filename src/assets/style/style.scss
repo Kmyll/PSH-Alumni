@@ -40,6 +40,13 @@ body {
 	display: flex;
 }
 
+.loaderImg {
+	img {
+		display: block;
+		margin: 3% auto;
+	}
+}
+
 // general page layout
 
 .container {
@@ -610,7 +617,7 @@ input[type="file" i] {
 		text-align: left;
 		justify-content: space-around;
 		div {
-			flex-grow: 1;
+			flex: 1;
 		}
 		a {
 			cursor: pointer;
@@ -684,8 +691,8 @@ input[type="file" i] {
 		list-style-type: none;
 		display: flex;
 		justify-content: space-between;
+		flex: 1;
 		span {
-			flex-grow: 1;
 			strong {
 				color: $red;
 			}
@@ -700,6 +707,9 @@ input[type="file" i] {
 
 .adminUsersDetails {
 	section {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
 		div {
 			display: flex;
 			flex-direction: column;
@@ -709,6 +719,14 @@ input[type="file" i] {
 			strong {
 				color: $bordeaux;
 				line-height: 2rem;
+			}
+
+			p {
+				margin: 0 !important;
+				line-height: 1.4285em;
+			}
+			ul {
+				margin-left: 5%;
 			}
 		}
 		span {
@@ -723,6 +741,7 @@ input[type="file" i] {
 			}
 		}
 	}
+
 	.test {
 		p {
 			align-self: flex-start !important;
@@ -919,4 +938,65 @@ input[type="file" i] {
 
 .display-none {
 	display: none;
+}
+
+// ADMIN RESUME
+
+.cvImg {
+	max-width: 200px;
+	flex: right;
+}
+
+.adminResumesDetails {
+	section {
+		div {
+			display: flex;
+			justify-content: space-around;
+			div {
+				display: flex;
+				flex-direction: column;
+				font-size: 1.6rem;
+				span {
+					flex: 1;
+					strong {
+						color: $bordeaux;
+					}
+				}
+			}
+		}
+	}
+}
+
+.ResumeAdminBtn {
+	button {
+		margin-top: 100%;
+		padding: 10% 35%;
+		background-color: $red;
+		color: white;
+		font-weight: bold;
+		border: none;
+		border-radius: 10px;
+	}
+}
+
+.adminResumeList {
+	padding: 2%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+
+	li {
+		margin-bottom: 2%;
+		padding: 2%;
+		background-color: #f8f8f8;
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+
+		span {
+			flex: 1;
+			strong {
+				color: $red;
+			}
+		}
+	}
 }
