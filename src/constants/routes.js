@@ -6,11 +6,11 @@ export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 export const ADMIN = '/admin';
 export const ADMIN_DETAILS = '/admin/:id';
-export const JOBS = '/job';
-export const JOBS_DETAILS = '/job/:id';
+// export const JOBS = '/job';
+// export const JOBS_DETAILS = '/job/:id';
 
-export const OFFRES = '/offres';
-export const OFFRES_DETAILS = '/offres/:id';
+// export const OFFRES = '/offres';
+// export const OFFRES_DETAILS = '/offres/:id';
 
 export const RESUME = '/adminResume';
 export const RESUME_DETAILS = '/adminResume/:id';
@@ -19,8 +19,8 @@ export const RESUME_DETAILS = '/adminResume/:id';
 
 export const ADMININTERFACE = '/adminInterface';
 export const JOBINTERFACE = '/jobInterface';
-export const JOBAD = '/jobAd';
-export const JOBLIST = '/joblist';
+// export const JOBAD = '/jobAd';
+// export const JOBS = '/jobs';
 export const ADHERER = '/adherer';
 export const AG = '/ag';
 export const AGENDA = '/agenda';

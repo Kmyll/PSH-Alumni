@@ -10,7 +10,6 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
-import JobPage from '../JobsInternships';
 import ResumePage from '../screens/adminResumes';
 
 import * as ROUTES from '../../constants/routes';
@@ -18,7 +17,6 @@ import { withAuthentication } from '../Session';
 
 import AdminInterface from '../screens/adminInterface';
 import Adherer from '../screens/adherer';
-import JobInterface from '../screens/jobInterface';
 import Ag from '../screens/ag';
 import Agenda from '../screens/agenda';
 import Alumni from '../screens/alumni';
@@ -39,14 +37,11 @@ import Histoire from '../screens/histoire';
 import Incubateur from '../screens/incubateur';
 import Missions from '../screens/missions';
 import Newsletter from '../screens/newsletter';
-import OffresEmploi from '../screens/offresEmploi';
 import Partenaires from '../screens/partenaires';
 import ParticiperEvenements from '../screens/participerEvenements';
 import Recrutement from '../screens/recrutement';
 import RecruterPsh from '../screens/recruterpsh';
 import Status from '../screens/status';
-import JobAdPage from '../screens/jobAd';
-import JobListPage from '../screens/jobList';
 
 const App = () => (
 	<Router>
@@ -59,16 +54,12 @@ const App = () => (
 				<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 				<Route path={ROUTES.HOME} component={HomePage} />
 				<Route path={ROUTES.ACCOUNT} component={AccountPage} />
-
 				<Route path={ROUTES.ADMIN} component={AdminPage} />
-				<Route path={ROUTES.JOBS} component={JobPage} />
 				<Route path={ROUTES.RESUME} component={ResumePage} />
 
 				{/* SCREENS */}
-				<Route path={ROUTES.JOBAD} component={JobAdPage} />
-				<Route path={ROUTES.JOBLIST} component={JobListPage} />
+
 				<Route path={ROUTES.ADMININTERFACE} component={AdminInterface} />
-				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />
 				<Route path={ROUTES.ADHERER} component={Adherer} />
 				<Route path={ROUTES.AG} component={Ag} />
 				<Route path={ROUTES.AGENDA} component={Agenda} />
@@ -90,8 +81,6 @@ const App = () => (
 				<Route path={ROUTES.INCUBATEUR} component={Incubateur} />
 				<Route path={ROUTES.MISSIONS} component={Missions} />
 				<Route path={ROUTES.NEWSLETTER} component={Newsletter} />
-
-				<Route path={ROUTES.OFFRESEMPLOI} component={OffresEmploi} />
 				<Route path={ROUTES.PARTENAIRES} component={Partenaires} />
 				<Route path={ROUTES.PARTICIPEREVENEMENTS} component={ParticiperEvenements} />
 				<Route path={ROUTES.RECRUTEMENT} component={Recrutement} />

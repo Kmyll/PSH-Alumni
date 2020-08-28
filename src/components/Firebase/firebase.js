@@ -4,7 +4,7 @@ import 'firebase/firestore';
 import 'firebase/storage';
 import 'dotenv/config';
 
-// const settings = { timestampsInSnapshots: true };
+const settings = { timestampsInSnapshots: true };
 
 const config = {
 	apiKey            : process.env.REACT_APP_API_KEY,
@@ -108,9 +108,15 @@ class Firebase {
 
 	// *** CV API ***
 
-	cv = (uid) => this.db.doc(`cv/${uid}`);
+	resume = (uid) => this.db.doc(`cv/${uid}`);
 
 	cv = () => this.db.collection('cv');
+
+	// *** Annonces API ***
+
+	annonce = (uid) => this.db.doc(`annonces/${uid}`);
+
+	annonces = () => this.db.collection('annonces');
 }
 
 export default Firebase;

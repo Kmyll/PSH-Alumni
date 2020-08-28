@@ -700,6 +700,29 @@ input[type="file" i] {
 	}
 }
 
+.adminJobsList {
+	padding: 2%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+
+	li {
+		margin-bottom: 2%;
+		padding: 2%;
+		background-color: #f8f8f8;
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+
+		span {
+			flex: 1;
+			text-align: left;
+			strong {
+				color: $red;
+			}
+		}
+	}
+}
+
 .adTitle {
 	text-align: center;
 	margin-bottom: 4% !important;
@@ -879,7 +902,7 @@ input[type="file" i] {
 
 // JOB LIST DISPLAY FOR ADMIN
 
-.jobListDisplay {
+.PositionListDisplay {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
