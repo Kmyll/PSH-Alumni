@@ -15,8 +15,10 @@ export const ADMIN_DETAILS = '/admin/:id';
 export const RESUME = '/adminResume';
 export const RESUME_DETAILS = '/adminResume/:id';
 
+export const JOBADDISPLAY = '/JobAdDisplayInterface';
+export const JOBADDISPLAY_DETAILS = '/JobAdDisplayInterface/:id';
 // SCREENS PAGES
-
+export const JOBADFORMPOST = '/jobAdFormPost';
 export const ADMININTERFACE = '/adminInterface';
 export const JOBINTERFACE = '/jobInterface';
 // export const JOBAD = '/jobAd';

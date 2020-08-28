@@ -14,7 +14,7 @@ import ResumePage from '../screens/adminResumes';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
-
+import JobInterface from '../screens/JobInterface';
 import AdminInterface from '../screens/adminInterface';
 import Adherer from '../screens/adherer';
 import Ag from '../screens/ag';
@@ -42,6 +42,8 @@ import ParticiperEvenements from '../screens/participerEvenements';
 import Recrutement from '../screens/recrutement';
 import RecruterPsh from '../screens/recruterpsh';
 import Status from '../screens/status';
+import JobAdFormPost from '../screens/jobAdFormPost';
+import JobAdDisplayPage from '../screens/JobAdDisplayInterface';
 
 const App = () => (
 	<Router>
@@ -53,12 +55,14 @@ const App = () => (
 				<Route path={ROUTES.SIGN_IN} component={SignInPage} />
 				<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 				<Route path={ROUTES.HOME} component={HomePage} />
+				<Route path={ROUTES.JOBADDISPLAY} component={JobAdDisplayPage} />
 				<Route path={ROUTES.ACCOUNT} component={AccountPage} />
 				<Route path={ROUTES.ADMIN} component={AdminPage} />
 				<Route path={ROUTES.RESUME} component={ResumePage} />
-
+				<Route path={ROUTES.JOBADFORMPOST} component={JobAdFormPost} />
 				{/* SCREENS */}
 
+				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />
 				<Route path={ROUTES.ADMININTERFACE} component={AdminInterface} />
 				<Route path={ROUTES.ADHERER} component={Adherer} />
 				<Route path={ROUTES.AG} component={Ag} />

@@ -42,7 +42,7 @@ class Honeycomb extends Component {
 						</Link>
 					</li>
 					<li class="honeycomb-cell">
-						<Link to="/job">
+						<Link to="/JobAdDisplayInterface">
 							<img
 								class="honeycomb-cell__image"
 								src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"

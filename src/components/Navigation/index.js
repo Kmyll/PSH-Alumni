@@ -39,7 +39,7 @@ const NavigationAuth = ({ authUser }) => (
 					<Dropdown.Item text="Contacter l'équipe Alumni" as={Link} to="/contact" />
 					<Dropdown.Item text="Participer aux evénements" as={Link} to="/evenements" />
 					<Dropdown.Item text="Recrutement" as={Link} to="/recrutement" />
-					<Dropdown.Item text="Consulter les offres" as={Link} to="/job" />
+					<Dropdown.Item text="Consulter les offres" as={Link} to="/JobAdDisplayInterface" />
 					<Dropdown.Item text="CvThèque" as={Link} to="/cvtheque" />
 				</Dropdown.Menu>
 			</Dropdown>
