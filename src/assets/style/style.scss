@@ -720,6 +720,9 @@ input[type="file" i] {
 				color: $red;
 			}
 		}
+		span:nth-child(4) {
+			flex: 0;
+		}
 	}
 }
 
@@ -1021,5 +1024,51 @@ input[type="file" i] {
 				color: $red;
 			}
 		}
+	}
+}
+
+// ADMIN JOB DETAILS
+
+.adminJobDetails {
+	section {
+		div {
+			div {
+				font-size: 1.4rem;
+				line-height: 3rem;
+				width: 100%;
+				justify-content: space-evenly;
+				align-items: center;
+				strong {
+					color: $bordeaux;
+				}
+			}
+		}
+	}
+}
+.JobManagementCta {
+	display: flex;
+	justify-content: space-evenly;
+
+	div {
+		margin-top: 2%;
+		button {
+			padding: 11px 40px !important;
+			border: none;
+			width: 250px;
+			outline: none;
+			border-radius: 10px;
+		}
+	}
+}
+.deleteAd {
+	background-color: $red;
+	color: white;
+}
+.detailsIcon a svg path {
+	color: orange;
+	&:hover {
+		color: $orange;
+
+		transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 	}
 }

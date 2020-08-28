@@ -14,6 +14,9 @@ export const ADMIN_DETAILS = '/admin/:id';
 
 export const RESUME = '/adminResume';
 export const RESUME_DETAILS = '/adminResume/:id';
+export const MODIFYJOBAD = '/ModifyJobAd';
+export const ADMINJOB = '/jobManagement';
+export const ADMINJOB_DETAILS = '/jobManagement/:id';
 
 export const JOBADDISPLAY = '/JobAdDisplayInterface';
 export const JOBADDISPLAY_DETAILS = '/JobAdDisplayInterface/:id';

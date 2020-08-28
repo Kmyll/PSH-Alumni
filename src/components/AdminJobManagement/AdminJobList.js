@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import Loader from '../../assets/img/loader/loader2.gif';
+import { compose } from 'recompose';
+import { withAuthorization, withEmailVerification } from '../Session';
 import * as ROLES from '../../constants/roles';
+import { FaPenAlt } from 'react-icons/fa';
 
-class JobAdDisplayList extends Component {
+class AdminJobsList extends Component {
 	constructor(props) {
 		super(props);
 
@@ -55,19 +58,16 @@ class JobAdDisplayList extends Component {
 							</span>
 
 							<span>
-								<strong>Contrat :</strong> {annonce.contrat}
-							</span>
-							<span>
 								<strong>lieu :</strong> {annonce.place}
 							</span>
-							<span>
+							<span className="detailsIcon">
 								<Link
 									to={{
-										pathname : `${ROUTES.JOBADDISPLAY}/${annonce.uid}`,
+										pathname : `${ROUTES.ADMINJOB}/${annonce.uid}`,
 										state    : { annonce }
 									}}
 								>
-									Détails
+									<FaPenAlt />
 								</Link>
 							</span>
 						</li>
@@ -77,4 +77,7 @@ class JobAdDisplayList extends Component {
 		);
 	}
 }
-export default withFirebase(JobAdDisplayList);
+
+const condition = (authUser) => authUser && !!authUser.roles[ROLES.ADMIN];
+
+export default compose(withEmailVerification, withAuthorization(condition))(AdminJobsList);

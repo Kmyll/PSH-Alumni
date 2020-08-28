@@ -12,6 +12,8 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import ResumePage from '../screens/adminResumes';
 
+import AdminJobManagementPage from '../screens/adminJobInterface';
+
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 import JobInterface from '../screens/JobInterface';
@@ -44,6 +46,7 @@ import RecruterPsh from '../screens/recruterpsh';
 import Status from '../screens/status';
 import JobAdFormPost from '../screens/jobAdFormPost';
 import JobAdDisplayPage from '../screens/JobAdDisplayInterface';
+import ModifyJobAdPage from '../screens/ModifyJobAd';
 
 const App = () => (
 	<Router>
@@ -62,6 +65,9 @@ const App = () => (
 				<Route path={ROUTES.JOBADFORMPOST} component={JobAdFormPost} />
 				{/* SCREENS */}
 
+				<Route path={ROUTES.MODIFYJOBAD} component={ModifyJobAdPage} />
+
+				<Route path={ROUTES.ADMINJOB} component={AdminJobManagementPage} />
 				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />
 				<Route path={ROUTES.ADMININTERFACE} component={AdminInterface} />
 				<Route path={ROUTES.ADHERER} component={Adherer} />
