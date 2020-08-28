@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 import Navigation from '../Navigation';
 import Footer from '../Footer';
@@ -11,10 +12,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import ResumePage from '../screens/adminResumes';
-
 import AdminJobManagementPage from '../screens/adminJobInterface';
-
-import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 import JobInterface from '../screens/JobInterface';
 import AdminInterface from '../screens/adminInterface';
@@ -66,7 +64,6 @@ const App = () => (
 				{/* SCREENS */}
 
 				<Route path={ROUTES.MODIFYJOBAD} component={ModifyJobAdPage} />
-
 				<Route path={ROUTES.ADMINJOB} component={AdminJobManagementPage} />
 				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />
 				<Route path={ROUTES.ADMININTERFACE} component={AdminInterface} />

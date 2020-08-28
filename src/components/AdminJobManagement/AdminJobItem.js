@@ -9,6 +9,7 @@ import renderHTML from 'react-render-html';
 import { Link } from 'react-router-dom';
 import Loader from '../../assets/img/loader/loader2.gif';
 import { compose } from 'recompose';
+import * as ROUTES from '../../constants/routes';
 import { withAuthorization, withEmailVerification } from '../Session';
 
 toast.configure();
@@ -107,7 +108,12 @@ class AdminJobItem extends Component {
 								</button>
 							</div>
 							<div>
-								<Link to="/ModifyJobAd">
+								<Link
+									to={{
+										pathname : `${ROUTES.MODIFYJOBAD}/${annonce.uid}`,
+										state    : { annonce }
+									}}
+								>
 									<button className="AdminJobBtn">Modifier</button>
 								</Link>
 							</div>
