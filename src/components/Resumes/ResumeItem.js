@@ -20,7 +20,7 @@ const notify = () => {
 	}
 };
 
-class JobItem extends Component {
+class PositionItem extends Component {
 	constructor(props) {
 		super(props);
 
@@ -117,4 +117,4 @@ class JobItem extends Component {
 	}
 }
 
-export default withFirebase(JobItem);
+export default withFirebase(PositionItem);

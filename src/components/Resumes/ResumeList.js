@@ -4,7 +4,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import Loader from '../../assets/img/loader/loader2.gif';
 
-class JobList extends Component {
+class PositionList extends Component {
 	constructor(props) {
 		super(props);
 
@@ -71,4 +71,4 @@ class JobList extends Component {
 	}
 }
 
-export default withFirebase(JobList);
+export default withFirebase(PositionList);
