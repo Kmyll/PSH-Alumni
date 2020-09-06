@@ -21,6 +21,7 @@
 		"pdfjs-dist": "^2.4.456",
 		"precise-ui": "^1.4.1",
 		"react": "^16.7.0-alpha.2",
+		"react-anchor-link-smooth-scroll": "^1.0.12",
 		"react-disposable-modal": "^1.0.0",
 		"react-dom": "^16.7.0-alpha.2",
 		"react-draft-wysiwyg": "^1.14.5",

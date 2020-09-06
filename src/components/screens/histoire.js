@@ -13,13 +13,45 @@ class Histoire extends Component {
 	render() {
 		return (
 			<div className="container">
-				<h1>Notre Histoire</h1>
+				<h1>La petite histoire de PSH Alumni</h1>
 				<h2>
 					<FaMix /> L'association des anciens de PSH
 				</h2>
 				<section className="flex_history">
 					<img className="historyPic" src={library} />
-					<p>
+					<section>
+						<p>
+							Juin 2014 : 1ère soirée des anciens de PSH – une bonne centaine de participants, anciens
+							élèves mais aussi anciens de l’équipe pédagogique et administrative, la salle qui regroupe
+							deux salles de classe était trop petite, des groupes de discussion se sont formés dans le
+							couloir… Les anciens élèves étaient accueillis par M. Lablée, chef d’établissement,
+							Françoise Signeyrole, à l’origine du projet d’amicale et les enseignants du lycée. Cette
+							première soirée fut un grand moment joyeux et plein d’humour, un temps de bavardages et
+							surtout l’occasion pour quelques participants de présenter leur parcours d’études et
+							professionnel. Des parcours professionnels exemplaires, souvent de belles réussites. A
+							l’origine de ces parcours d’études souvent atypiques, des années d’études à PSH, seconde,
+							1ère et terminale, puis deux ans en BTS. En tout cas, 2, 3 voire 5 ans accompagnés par une
+							équipe pédagogique qui a toujours fait confiance aux jeunes, qui les soutient, qui leur
+							donne les moyens de réussir. Le succès de la 1ère soirée des anciens élèves, suivie par
+							d’autres événements, a été le début de la construction, pas à pas, de l’amicale, pour
+							aboutir en décembre 2018, à la création de l’association (Loi 1901) «PSH Alumni».
+						</p>
+						<p>Que représente PSH Alumni aujourd’hui ?</p>
+						<ul>
+							<li>Plus de 2000 correspondants de 20 à plus de 60 ans,</li>
+							<li>
+								Anciens élèves, enseignants et administratifs, des entreprises partenaires, anciens
+								élèves
+							</li>
+							<li>
+								Créateurs d’entreprise, ou entrepreneurs en relation avec PSH ou directement avec
+								l’association…
+							</li>
+							<li>Une équipe active, le bureau et le conseil</li>
+							<li>Une collaboration étroite avec l’appel, PSH et l’incubateur de PSH</li>
+						</ul>
+					</section>
+					{/* <p>
 						Une première soirée des anciens de PSH a été organisée en juin 2014. Elle réunissait une
 						centaine de participants, anciens élèves mais aussi anciens de l'équipe pédagogique et
 						administrative, accueillis par M. Lablée, les enseignants du lycée et Françoise Signeyrole, à
@@ -37,9 +69,9 @@ class Histoire extends Component {
 						Le succès de la soirée, suivie par l'autres évènements, a été le début de la construction, pas à
 						pas, de l'amicale pour aboutir en décembre 2018 à la création de l'assocation (loi 1901) "PSH
 						Alumni".
-					</p>
+					</p> */}
 				</section>
-				<h2>
+				{/* <h2>
 					<FaAnchor /> But de l'assocation
 				</h2>
 				<h3>
@@ -77,7 +109,7 @@ class Histoire extends Component {
 				<ul className="historyUl">
 					<li>FParticiper à des rencontres avec les anciens élèves</li>
 					<li>Aider au développement de projets professionnels ou pédagogiques</li>
-				</ul>
+				</ul> */}
 			</div>
 		);
 	}

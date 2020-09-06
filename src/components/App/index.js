@@ -45,6 +45,7 @@ import Status from '../screens/status';
 import JobAdFormPost from '../screens/jobAdFormPost';
 import JobAdDisplayPage from '../screens/JobAdDisplayInterface';
 import ModifyJobAdPage from '../screens/ModifyJobAd';
+import HelpPage from '../screens/Help';
 
 const App = () => (
 	<Router>
@@ -63,6 +64,7 @@ const App = () => (
 				<Route path={ROUTES.JOBADFORMPOST} component={JobAdFormPost} />
 				{/* SCREENS */}
 
+				<Route path={ROUTES.HELP} component={HelpPage} />
 				<Route path={ROUTES.MODIFYJOBAD} component={ModifyJobAdPage} />
 				<Route path={ROUTES.ADMINJOB} component={AdminJobManagementPage} />
 				<Route path={ROUTES.JOBINTERFACE} component={JobInterface} />

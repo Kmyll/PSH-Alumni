@@ -16,6 +16,7 @@ export const JOBADDISPLAY_DETAILS = '/JobAdDisplayInterface/:id';
 
 // SCREENS PAGES
 
+export const HELP = '/Help';
 export const JOBADFORMPOST = '/jobAdFormPost';
 export const ADMININTERFACE = '/adminInterface';
 export const JOBINTERFACE = '/jobInterface';

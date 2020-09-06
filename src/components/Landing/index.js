@@ -18,7 +18,7 @@ const Landing = () => (
 					</p>
 				</Card.Content>
 				<Card.Content extra>
-					<a href="/histoire">Notre histoire</a>
+					<a href="/histoire">La petite histoire de PSH Alumni</a>
 				</Card.Content>
 			</Card>
 			<Card>

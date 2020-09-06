@@ -38,7 +38,7 @@ class AdminJobsList extends Component {
 
 		return (
 			<div>
-				<h1>Liste des offres, emplois et stages</h1>
+				<h1>Offres :emplois et stages</h1>
 				{loading && (
 					<div className="loaderImg">
 						<img src={Loader} />

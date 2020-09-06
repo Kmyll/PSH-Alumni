@@ -26,6 +26,7 @@ html {
 	height: 100%;
 	width: 100%;
 	display: block;
+	scroll-behavior: smooth;
 }
 body {
 	height: 100%;
@@ -45,6 +46,11 @@ body {
 		display: block;
 		margin: 3% auto;
 	}
+}
+li {
+	font-size: 16px;
+	margin: 0 0 1em;
+	line-height: 0.6em;
 }
 
 // general page layout
@@ -83,6 +89,12 @@ body {
 	li {
 		font-size: 16px;
 		text-align: justify;
+	}
+	ul {
+		margin-bottom: 2%;
+		li {
+			margin-left: 3%;
+		}
 	}
 }
 
@@ -138,11 +150,14 @@ body {
 	display: flex;
 	.logo {
 		flex-grow: 1;
+		margin: 0 !important;
 	}
 	li {
+		margin-top: 12px;
 		margin-right: 2%;
 		list-style: none;
 		align-self: center;
+
 		a,
 		.divider,
 		.dropdown {
@@ -720,7 +735,7 @@ input[type="file" i] {
 				color: $red;
 			}
 		}
-		span:nth-child(4) {
+		span:nth-child(5) {
 			flex: 0;
 		}
 	}
@@ -1070,5 +1085,216 @@ input[type="file" i] {
 		color: $orange;
 
 		transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+	}
+}
+
+// ACCOUNT PAGE
+
+.passwordChangeForm {
+	display: flex;
+	div {
+		margin-right: 1%;
+		min-width: 200px;
+	}
+	button {
+		width: 200px;
+		border-radius: 10px;
+		border: none;
+		background-color: #f8f8f8;
+		&:hover {
+			transition-timing-function: ease-out;
+			background-color: $red;
+			color: white;
+			/* A litttttle slower on the way in */
+			transition: 0.25s;
+
+			/* Move into place */
+			transform: translateY(0);
+		}
+	}
+}
+
+// HELP PAGE
+
+.helpFlex {
+	display: flex;
+	div {
+		padding: 2%;
+		border-radius: 10px;
+	}
+}
+.leftMenu {
+	top: 20px;
+	position: -webkit-sticky;
+	position: sticky;
+	width: 20%;
+	height: 100%;
+	margin-right: 2%;
+	border: 1Px solid $orange;
+	h2 {
+		text-align: center;
+		margin: 12% 0;
+	}
+	ol li {
+		margin: 8% 0;
+	}
+}
+.rightContent {
+	background-color: #f8f8f8;
+	width: 78%;
+	height: 100%;
+	h2 {
+		color: $orange;
+		font-size: 1.5rem;
+		svg {
+			margin-right: 1%;
+			path {
+				color: $orange;
+			}
+		}
+	}
+	img {
+		width: 100%;
+		max-width: 800px;
+		display: block;
+		margin: 3% auto;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+	}
+}
+
+// INCUBATEUR
+
+//PEPITEPON
+
+.incubateur {
+	ul {
+		li {
+			margin-left: 3%;
+		}
+	}
+}
+
+.IncubateurInfo {
+	display: flex;
+	justify-content: space-around;
+	margin: 2% auto;
+}
+
+.contactCard {
+	width: 23%;
+	padding: 3%;
+	background-color: #f8f8f8;
+	border-radius: 10px;
+	p {
+		text-align: left;
+	}
+}
+.pepitePonLogo {
+	float: right;
+	clear: both;
+	overflow: hidden;
+	margin: 6% 0 3% 3%;
+}
+
+// STATUS
+
+.status {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 5%;
+	h2 {
+		text-align: center;
+		margin-top: -3%;
+		font-size: 1.6rem;
+	}
+	h3 {
+		margin: 3% auto 1% auto;
+	}
+	ul {
+		margin: 1% auto 3% auto;
+		li {
+			margin-left: 3%;
+		}
+	}
+}
+
+.imgStatus {
+	float: right;
+	border-radius: 10px;
+	margin: 8% 0 2% 3%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+// AG
+
+.agSection {
+	ul {
+		margin-top: 3%;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			list-style: none;
+			margin: 0 auto;
+			justify-content: space-around;
+			align-items: center;
+			a {
+				.legend {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+.pvImg {
+	width: 100%;
+	max-width: 250px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.pvImgOpacity {
+	width: 100%;
+	max-width: 250px;
+	opacity: 0.2;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.legend {
+	text-align: center;
+}
+
+//ADHERER
+
+.adherer {
+	ul {
+		li {
+			line-height: 1.3rem;
+		}
+	}
+}
+
+// EVENTS
+
+.eventsFlex {
+	display: flex;
+	flex-direction: column;
+	div {
+		border-radius: 10px;
+		background-color: #f8f8f8;
+		padding: 2%;
+		margin-bottom: 2%;
+		h2 {
+			margin: 0;
+		}
+		p:nth-child(even) {
+			color: $red;
+			margin-top: 1%;
+			margin-bottom: 0;
+			font-style: italic;
+		}
 	}
 }

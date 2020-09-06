@@ -5,33 +5,35 @@ import { AuthUserContext, withAuthorization, withEmailVerification } from '../Se
 import { withFirebase } from '../Firebase';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
+import DeleteResume from '../plugins/deleteResume'
 
 const SIGN_IN_METHODS = [
 	{
 		id       : 'password',
 		provider : null
-	},
-	{
-		id       : 'google.com',
-		provider : 'googleProvider'
-	},
-	{
-		id       : 'facebook.com',
-		provider : 'facebookProvider'
-	},
-	{
-		id       : 'twitter.com',
-		provider : 'twitterProvider'
 	}
+	// {
+	// 	id       : 'google.com',
+	// 	provider : 'googleProvider'
+	// },
+	// {
+	// 	id       : 'facebook.com',
+	// 	provider : 'facebookProvider'
+	// },
+	// {
+	// 	id       : 'twitter.com',
+	// 	provider : 'twitterProvider'
+	// }
 ];
 
 const AccountPage = () => (
 	<AuthUserContext.Consumer>
 		{(authUser) => (
-			<div>
-				<h1>Account: {authUser.email}</h1>
-				<PasswordForgetForm />
+			<div className="container">
+				<h1>Bienvenue sur votre compte, {authUser.username}</h1>
+				{/* <PasswordForgetForm /> */}
 				<PasswordChangeForm />
+				{/* <DeleteResume/> */}
 				<LoginManagement authUser={authUser} />
 			</div>
 		)}
@@ -84,18 +86,16 @@ class LoginManagementBase extends Component {
 
 	render() {
 		const { activeSignInMethods, error } = this.state;
-
 		return (
 			<div>
-				Sign In Methods:
 				<ul>
 					{SIGN_IN_METHODS.map((signInMethod) => {
 						const onlyOneLeft = activeSignInMethods.length === 1;
 						const isEnabled = activeSignInMethods.includes(signInMethod.id);
 
 						return (
-							<li key={signInMethod.id}>
-								{
+							<div key={signInMethod.id}>
+								{/* {
 									signInMethod.id === 'password' ? <DefaultLoginToggle
 										onlyOneLeft={onlyOneLeft}
 										isEnabled={isEnabled}
@@ -109,8 +109,8 @@ class LoginManagementBase extends Component {
 										signInMethod={signInMethod}
 										onLink={this.onSocialLoginLink}
 										onUnlink={this.onUnlink}
-									/>}
-							</li>
+									/>} */}
+							</div>
 						);
 					})}
 				</ul>
@@ -154,9 +154,12 @@ class DefaultLoginToggle extends Component {
 
 		const isInvalid = passwordOne !== passwordTwo || passwordOne === '';
 
-		return isEnabled ? (<button type="button" onClick={() => onUnlink(signInMethod.id)} disabled={onlyOneLeft}>
-				Deactivate {signInMethod.id}
-			</button>) :(
+		return (
+			isEnabled ? ''
+			// <button type="button" onClick={() => onUnlink(signInMethod.id)} disabled={onlyOneLeft}>
+			// 	Deactivate {signInMethod.id}
+			// </button> 
+			:
 			<form onSubmit={this.onSubmit}>
 				<input
 					name="passwordOne"
@@ -176,8 +179,7 @@ class DefaultLoginToggle extends Component {
 				<button disabled={isInvalid} type="submit">
 					Link {signInMethod.id}
 				</button>
-			</form>
-			);
+			</form>)
 	}
 }
 

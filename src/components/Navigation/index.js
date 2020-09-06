@@ -27,10 +27,13 @@ const NavigationAuth = ({ authUser }) => (
 			</Link>
 		</li>
 		<li>
-			<Link to={ROUTES.HOME}>Home</Link>
+			<Link to={ROUTES.HOME}>Accueil</Link>
 		</li>
 		<li>
-			<Link to={ROUTES.ACCOUNT}>Account</Link>
+			<Link to={ROUTES.ACCOUNT}>Mon compte</Link>
+		</li>
+		<li>
+			<Link to={ROUTES.HELP}>Aide</Link>
 		</li>
 
 		<li>
