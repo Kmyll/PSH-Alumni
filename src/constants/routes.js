@@ -6,24 +6,26 @@ export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 export const ADMIN = '/admin';
 export const ADMIN_DETAILS = '/admin/:id';
-// export const JOBS = '/job';
-// export const JOBS_DETAILS = '/job/:id';
-
-// export const OFFRES = '/offres';
-// export const OFFRES_DETAILS = '/offres/:id';
-
 export const RESUME = '/adminResume';
 export const RESUME_DETAILS = '/adminResume/:id';
+export const MODIFYJOBAD = '/ModifyJobAd';
+export const ADMINJOB = '/jobManagement';
+export const ADMINJOB_DETAILS = '/jobManagement/:id';
+export const JOBADDISPLAY = '/JobAdDisplayInterface';
+export const JOBADDISPLAY_DETAILS = '/JobAdDisplayInterface/:id';
+
+export const PUBLISHNEWSLETTER = '/publishNewsletter';
+export const EVENTSMANAGEMENT = '/eventManagement';
+export const POSTAG = '/postAG';
 
 // SCREENS PAGES
 
+export const HELP = '/Help';
+export const JOBADFORMPOST = '/jobAdFormPost';
 export const ADMININTERFACE = '/adminInterface';
 export const JOBINTERFACE = '/jobInterface';
-// export const JOBAD = '/jobAd';
-// export const JOBS = '/jobs';
 export const ADHERER = '/adherer';
 export const AG = '/ag';
-export const AGENDA = '/agenda';
 export const ALUMNI = '/alumni';
 export const APPRENTI = '/apprenti';
 export const CARNET = '/carnet';
@@ -44,7 +46,7 @@ export const MISSIONS = '/missions';
 export const NEWSLETTER = '/newsletter';
 export const OFFRESEMPLOI = '/offresemploi';
 export const PARTENAIRES = '/partenaires';
-export const PARTICIPEREVENEMENTS = '/ParticiperEvenements';
+export const EVENEMENTS = '/evenements';
 export const RECRUTEMENT = '/recrutement';
 export const RECRUTERPSH = '/recruterpsh';
 export const STATUS = '/status';

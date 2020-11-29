@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { GrUserSettings } from 'react-icons/gr';
 import { BiLogInCircle } from 'react-icons/bi';
 import { BsCardChecklist } from 'react-icons/bs';
-import { MdComputer } from 'react-icons/md';
+import { MdComputer, MdEventNote } from 'react-icons/md';
+import { GiLetterBomb } from 'react-icons/gi';
+import { SiGooglehangoutsmeet } from 'react-icons/si';
 
 import { withAuthorization, withEmailVerification } from '../Session';
 import { UserList, UserItem } from '../Users';
@@ -29,6 +31,16 @@ const AdminPage = () => (
 			<Link to={ROUTES.JOBINTERFACE}>
 				<MdComputer /> <span>Gérer les offre d'emploi</span>
 			</Link>
+			<Link to={ROUTES.PUBLISHNEWSLETTER}>
+				<GiLetterBomb /> <span>Publier une newsletter</span>
+			</Link>
+			<Link to={ROUTES.EVENTSMANAGEMENT}>
+				<MdEventNote /> <span>Gérer les evénements</span>
+			</Link>
+			<Link to={ROUTES.POSTAG}>
+				<SiGooglehangoutsmeet /> <span>Poster un compte rendu d'AG</span>
+			</Link>
+			<Link to="#" />
 		</section>
 		<img className="adminPicture" src={Admin} />
 	</div>
