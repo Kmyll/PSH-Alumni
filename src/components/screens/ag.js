@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProcesVerbal2018 from '../../assets/img/ProcesVerbal2018.png';
-// import ProcesVerbal2018DOc from '../../assets/documents/2018Ag.pdf';
+import ProcesVerbal2018DOc from '../../assets/documents/2018Ag.pdf';
 
 class ag extends Component {
 	constructor (props) {
@@ -30,10 +30,10 @@ class ag extends Component {
 							</a>
 						</li>
 						<li>
-							{/* <a href={ProcesVerbal2018DOc} target="_blank">
+							<a href={ProcesVerbal2018DOc} target="_blank">
 								<img className="pvImg" src={ProcesVerbal2018} />
 								<legend className="legend">Assemblée générale 2018</legend>
-							</a> */}
+							</a>
 						</li>
 					</ul>
 				</section>
